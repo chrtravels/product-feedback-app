@@ -14,13 +14,13 @@ $background: #F7F8FD;
 $light-blue: #62BCFA;
 $salmon: #F49F85;
 
-$light-font: #FFFFFF;
+$white-font: #FFFFFF;
 $dark-font: #3A4374;
-
+$light-font: #647196;
 
 // Primary Button Class
 .button-primary {
-  color: var($light-font);
+  color: var($white-font);
   background-color: var($primary-color);
   border: none;
   border-radius: 6px;
@@ -32,7 +32,7 @@ $dark-font: #3A4374;
 
 // Secondary Button Class
 .button-secondary {
-  color: var($light-font);
+  color: var($white-font);
   background-color: var($secondary-color);
   border: none;
   border-radius: 6px;
@@ -44,7 +44,7 @@ $dark-font: #3A4374;
 
 // Cancel Button Class
 .button-cancel {
-  color: var($light-font);
+  color: var($white-font);
   background-color: var($cancel);
   border: none;
   border-radius: 6px;
@@ -56,7 +56,7 @@ $dark-font: #3A4374;
 
 // Warning Button Class
 .button-warning {
-  color: var($light-font);
+  color: var($white-font);
   background-color: var($warning);
   border: none;
   border-radius: 6px;
@@ -114,23 +114,48 @@ h4 {
 
 // FORM ELEMENTS
 
-.field-default {
+.field {
+  color: var($dark-font);
   background-color: var($background);
   border: none;
   border-radius: 4px;
 }
 
-// Filled
-.field-filled {
-
-}
-
 // Active
 .field-active {
-
+  border: color($secondary-color) 2px solid;
 }
 
 // Error
 .field-error {
+  border: color($warning) 2px solid;
+}
 
+// DROP DOWN
+
+// Default
+.drop-down {
+  background-color: var($background);
+}
+
+// Active
+.drop-down-active {
+  color: var($dark-font);
+  border: color($secondary-color) 2px solid;
+}
+
+// Menu
+.drop-down-menu {
+  border: none;
+  border-radius: 4px;
+
+  filter: drop-shadow(5px 5px 10px #4661E6);
+
+  li {
+    color: var($light-font);
+  }
+
+  li:hover {
+    color: var($primary-color);
+  }
 }
