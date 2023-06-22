@@ -18,52 +18,58 @@ $white-font: #FFFFFF;
 $dark-font: #3A4374;
 $light-font: #647196;
 
+body {
+  background-color: $background;
+  width: 100vw;
+  height: 100vh;
+}
+
 // Primary Button Class
 .button-primary {
-  color: var($white-font);
-  background-color: var($primary-color);
+  color: $white-font;
+  background-color: $primary-color;
   border: none;
   border-radius: 6px;
 }
 
 .button-primary:hover {
-  background-color: var($primary-hover);
+  background-color: $primary-hover;
 }
 
 // Secondary Button Class
 .button-secondary {
-  color: var($white-font);
-  background-color: var($secondary-color);
+  color: $white-font;
+  background-color: $secondary-color;
   border: none;
   border-radius: 6px;
 }
 
 .button-secondary:hover {
-  background-color: var($secondary-hover);
+  background-color: $secondary-hover;
 }
 
 // Cancel Button Class
 .button-cancel {
-  color: var($white-font);
-  background-color: var($cancel);
+  color: $white-font;
+  background-color: $cancel;
   border: none;
   border-radius: 6px;
 }
 
 .button-cancel:hover {
-  background-color: var($cancel-hover);
+  background-color: $cancel-hover;
 }
 
 // Warning Button Class
 .button-warning {
-  color: var($white-font);
-  background-color: var($warning);
+  color: $white-font;
+  background-color: $warning;
   border: none;
   border-radius: 6px;
 }
 
 .button-warning:hover {
-  background-color: var($warning-hover);
+  background-color: $warning-hover;
 }
 
 
@@ -115,33 +121,33 @@ h4 {
 // FORM ELEMENTS
 
 .field {
-  color: var($dark-font);
-  background-color: var($background);
+  color: $dark-font;
+  background-color: $background;
   border: none;
   border-radius: 4px;
 }
 
 // Active
 .field-active {
-  border: color($secondary-color) 2px solid;
+  border: $secondary-color 2px solid;
 }
 
 // Error
 .field-error {
-  border: color($warning) 2px solid;
+  border: $warning 2px solid;
 }
 
 // DROP DOWN
 
 // Default
 .drop-down {
-  background-color: var($background);
+  background-color: $background;
 }
 
 // Active
 .drop-down-active {
-  color: var($dark-font);
-  border: color($secondary-color) 2px solid;
+  color: $dark-font;
+  border: $secondary-color 2px solid;
 }
 
 // Menu
@@ -152,10 +158,10 @@ h4 {
   filter: drop-shadow(5px 5px 10px #4661E6);
 
   li {
-    color: var($light-font);
+    color: $light-font;
   }
 
   li:hover {
-    color: var($primary-color);
+    color: $primary-color;
   }
 }
