@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './suggestionsNavbar.module.scss';
 
 function SuggestionsNavbar() {
@@ -14,7 +15,10 @@ function SuggestionsNavbar() {
         </div>
       </div>
 
-      <button className="button button-primary">+ Add Feedback</button>
+      <Link to="/new-feedback">
+        <button className="button button-primary">+ Add Feedback</button>
+      </Link>
+
 
     </div>
   );
