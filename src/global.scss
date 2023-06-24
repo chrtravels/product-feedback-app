@@ -8,7 +8,7 @@ $warning: #d73737;
 $warning-hover: #e98888;
 $unselected: #F2F4FF;
 
-$banner: #4661E6;
+$banner: #373f68;
 $background: #F7F8FD;
 
 $light-blue: #62BCFA;
@@ -22,12 +22,30 @@ body {
   background-color: $background;
 }
 
+.white-font {
+  color: $white-font;
+}
+
+.dark-font {
+  color: $dark-font;
+}
+
+.light-font {
+  color: $light-font;
+}
+
+.button {
+  color: $white-font;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 1rem 1.7rem;
+  cursor: pointer;
+}
+
 // Primary Button Class
 .button-primary {
-  color: $white-font;
   background-color: $primary-color;
-  border: none;
-  border-radius: 6px;
 }
 
 .button-primary:hover {
@@ -36,10 +54,7 @@ body {
 
 // Secondary Button Class
 .button-secondary {
-  color: $white-font;
   background-color: $secondary-color;
-  border: none;
-  border-radius: 6px;
 }
 
 .button-secondary:hover {
@@ -48,10 +63,7 @@ body {
 
 // Cancel Button Class
 .button-cancel {
-  color: $white-font;
   background-color: $cancel;
-  border: none;
-  border-radius: 6px;
 }
 
 .button-cancel:hover {
@@ -60,10 +72,7 @@ body {
 
 // Warning Button Class
 .button-warning {
-  color: $white-font;
   background-color: $warning;
-  border: none;
-  border-radius: 6px;
 }
 
 .button-warning:hover {

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: relative;
+}
+
+img {
+  border-radius: 12px;
+}
+
+.content {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1rem;
+}
+
+h1 {
+  margin-bottom: 0px;
+}
+
+p {
+  margin-top: .2rem;
+}

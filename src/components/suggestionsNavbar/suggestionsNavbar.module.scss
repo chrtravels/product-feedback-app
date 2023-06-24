@@ -1,0 +1,21 @@
+@import '../../global.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $banner;
+  border-radius: 12px;
+  padding: .5rem 1rem;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  color: #c3c7d9;
+  cursor: pointer;
+}
+
+h3 {
+  color: $white-font;
+}

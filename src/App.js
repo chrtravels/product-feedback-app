@@ -1,16 +1,17 @@
 import './App.css';
+import './global.scss';
+import Sidebar from './layouts/sidebar/Sidebar';
+import SuggestionsLayout from './layouts/suggestions/SuggestionsLayout';
 
 
 function App() {
   return (
-    <div className="App">
-      <div className='sidebar'>
+    <div className="container">
+     <Sidebar className="sidebar"/>
 
-      </div>
-
-      <div className="main">
-
-      </div>
+     <div className="content">
+      <SuggestionsLayout />
+     </div>
     </div>
   );
 }
