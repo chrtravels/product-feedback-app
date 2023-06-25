@@ -3,24 +3,16 @@ import styles from './suggestionsLayout.module.scss';
 
 import Empty from '../../assets/suggestions/illustration-empty.svg';
 import { useEffect, useState } from 'react';
+import { getRequests } from '../../ApiService';
 
 function SuggestionsLayout() {
-  const [comments, setComments] = useState([])
+  const [requests, setRequests] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('./data.json')
-      .then(res => res.json())
-      .then((data) => {
-        console.log(data)
-        setComments(data)
-      })
+    getRequests().then(data => setRequests(data));
+  }, [])
 
-    }
-    fetchData();
-  }, [comments])
-
-  console.log(comments);
+  console.log('requests: ', requests);
 
   return (
     <div className={styles.container}>
