@@ -1,6 +1,6 @@
 import styles from './suggestionCard.module.scss';
 
-import CommentsIcon from '../../assets/shared/icon-comments.svg';
+import {ReactComponent as CommentsIcon} from '../../assets/shared/icon-comments.svg';
 
 function SuggestionCard() {
   return (

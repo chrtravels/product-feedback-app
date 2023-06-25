@@ -38,5 +38,6 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.0.1"
+
   }
 }

@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import styles from './suggestionsNavbar.module.scss';
 
+import {ReactComponent as SuggestionsIcon} from '../../assets/suggestions/icon-suggestions.svg';
+
 function SuggestionsNavbar() {
   return (
     <div className={styles.container}>
@@ -10,6 +12,7 @@ function SuggestionsNavbar() {
         </div>
 
         <div className={styles.content}>
+          <SuggestionsIcon />
           <h3># Suggestions</h3>
           <span>Sort by :</span>
         </div>
