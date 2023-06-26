@@ -14,7 +14,7 @@ function SuggestionsNavbar() {
         <div className={styles.content}>
           <SuggestionsIcon />
           <h3># Suggestions</h3>
-          <span>Sort by :</span>
+          <span id={styles.sort}>Sort by :</span>
         </div>
       </div>
 
