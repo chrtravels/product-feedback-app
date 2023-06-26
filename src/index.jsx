@@ -9,7 +9,8 @@ import {
 import "./index.css";
 import Root from './routes/root';
 import ErrorPage from './error-page';
-import NewFeedback from './routes/newFeedback';
+import NewFeedback from './pages/newFeedback';
+import Roadmap from './pages/roadmap';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,11 @@ const router = createBrowserRouter([
   {
     path: "new-feedback",
     element: <NewFeedback />
-  }
+  },
+  {
+    path: "roadmap",
+    element: <Roadmap />
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

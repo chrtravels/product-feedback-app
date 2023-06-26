@@ -8,17 +8,17 @@ import SuggestionCard from '../suggestionCard/SuggestionCard';
 
 
 function SuggestionsList() {
-  const [requests, setRequests] = useState([]);
+  const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
-    getRequests().then(data => setRequests(data));
+    getRequests().then(data => setSuggestions(data));
   }, [])
 
-  console.log('requests: ', requests);
+  console.log('requests: ', suggestions);
 
   return (
     <div className={styles.container}>
-      {!requests
+      {!suggestions
         // If no suggestions, display no feedback page
       ? <div className={styles.noFeedbackContainer}>
           <div className={styles.content}>
@@ -31,8 +31,8 @@ function SuggestionsList() {
         </div>
         // Else display suggestions
       : <div>
-          {requests.map((request) => {
-            const {title, upvotes, status, description, comments, category} = request;
+          {suggestions.map((suggestion) => {
+            const {title, upvotes, status, description, comments, category} = suggestion;
 
             return (
               <SuggestionCard
