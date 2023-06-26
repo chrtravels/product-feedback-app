@@ -7,6 +7,7 @@ $cancel-hover: #656ea3;
 $warning: #d73737;
 $warning-hover: #e98888;
 $unselected: #F2F4FF;
+$selected: #CFD7FF;
 
 $banner: #373f68;
 $background: #F7F8FD;
@@ -39,7 +40,7 @@ body {
   border: none;
   border-radius: 10px;
   font-weight: bold;
-  padding: 1rem 1.7rem;
+  padding: .8rem 1.5rem;
   cursor: pointer;
 }
 
@@ -77,6 +78,16 @@ body {
 
 .button-warning:hover {
   background-color: $warning-hover;
+}
+
+// Tags & Vote
+.tag-vote {
+  background-color: $unselected;
+  border-radius: 10px;
+}
+
+.tag-vote:hover {
+  background-color: $selected;
 }
 
 
