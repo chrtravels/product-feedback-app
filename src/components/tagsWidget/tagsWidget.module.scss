@@ -1,0 +1,34 @@
+@import '../../global.scss';
+
+.container {
+  width: 215px;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: white;
+  margin: 1rem 1rem 0 0;
+  padding: 1.5rem 1rem .5rem 1.3rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tagContainer {
+  margin: 0 .8rem .9rem 0;
+  padding:  .3rem 1rem;
+  cursor: pointer;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: $secondary-color
+}
+
+.tagActive {
+  font-size: 12px;
+  font-weight: 700;
+  color: $white-font;
+}
+
+.allActive {
+  background-color: $secondary-color;
+}

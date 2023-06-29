@@ -6,7 +6,6 @@ import SuggestionsList from '../../components/suggestionsList/SugguestionsList';
 
 function SuggestionsLayout() {
 
-
   return (
     <div className={styles.container}>
       <SuggestionsNavbar />

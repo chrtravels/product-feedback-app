@@ -1,4 +1,4 @@
-import TagsWidget from '../../components/roadmapWidget/tagsWidget/TagsWidget';
+import TagsWidget from '../../components/tagsWidget/TagsWidget';
 import styles from './sidebar.module.scss';
 import RoadMapWidget from '../../components/roadmapWidget/RoadmapWidget';
 

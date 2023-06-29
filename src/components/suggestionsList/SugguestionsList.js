@@ -12,9 +12,10 @@ function SuggestionsList() {
 
   useEffect(() => {
     getRequests().then(data => setSuggestions(data));
+
   }, [])
 
-  console.log('requests: ', suggestions);
+  // console.log('requests: ', suggestions);
 
   return (
     <div className={styles.container}>
