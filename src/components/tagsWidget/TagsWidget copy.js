@@ -22,7 +22,8 @@ function TagsWidget() {
         if (!tempCategories.includes(el.category)) {
           tempCategories.push(el.category);
         }
-
+        console.log('el: ', el.category)
+        console.log('selected: ', selectedCategory)
         if (el.status === 'suggestion') {
 
           if (selectedCategory === 'all') {
@@ -39,8 +40,8 @@ function TagsWidget() {
     });
   }, [selectedCategory, allIsActive])
 
-  // console.log('suggestions ', suggestions);
-  // console.log('categories: ', categories)
+  console.log('suggestions ', suggestions);
+  console.log('categories: ', categories)
 
   // Functions to handle toggling of tags
   function handleTagSelect(e) {
@@ -55,27 +56,26 @@ function TagsWidget() {
   }
   // End of toggle tag functions
 
-  return {
-    suggestions,
-    render: (
-      <div className={styles.container}>
-        <div className={`${styles.tagContainer} ${allIsActive ? styles.allActive : 'tag-vote'} tag-vote`}>
-        <span className={allIsActive ? styles.tagActive : styles.tag} id={styles.all} onClick={handleSelectAll}>All</span>
-        </div>
-        {categories.map((el, index) => {
-          let word = el;
-          let category = word.charAt(0).toUpperCase() + word.slice(1);
-
-          return (
-            <div key={index} className={`${styles.tagContainer} ${selectedCategory === category ? styles.allActive : ''} tag-vote`}>
-              <span className={selectedCategory === category ? styles.tagActive : styles.tag} id={category} onClick={handleTagSelect}>{category}</span>
-            </div>
-          )
-        })}
-
+  return (
+    <div className={styles.container}>
+      <div className={`${styles.tagContainer} ${allIsActive ? styles.allActive : 'tag-vote'} tag-vote`}>
+      <span className={allIsActive ? styles.tagActive : styles.tag} id={styles.all} onClick={handleSelectAll}>All</span>
       </div>
-    )
-  };
+      {categories.map((el) => {
+        let word = el;
+        let category = word.charAt(0).toUpperCase() + word.slice(1);
+
+        return (
+          <div className={`${styles.tagContainer} ${selectedCategory === category ? styles.allActive : ''} tag-vote`}>
+            <span className={selectedCategory === category ? styles.tagActive : styles.tag} id={category} onClick={handleTagSelect}>{category}</span>
+          </div>
+        )
+      })}
+
+
+
+    </div>
+  );
 }
 
 export default TagsWidget;

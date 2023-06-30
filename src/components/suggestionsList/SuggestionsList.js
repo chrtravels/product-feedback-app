@@ -7,13 +7,15 @@ import {ReactComponent as Empty} from '../../assets/suggestions/illustration-emp
 import SuggestionCard from '../suggestionCard/SuggestionCard';
 
 
-function SuggestionsList() {
-  const [suggestions, setSuggestions] = useState([]);
+function SuggestionsList({suggestions}) {
+  // const [suggestions, setSuggestions] = useState([]);
+  // const [temp, setTemp] = useState(suggestions);
 
-  useEffect(() => {
-    getRequests().then(data => setSuggestions(data));
+  // useEffect(() => {
+  //   // getRequests().then(data => setSuggestions(data));
+  //   setTemp(suggestions);
 
-  }, [])
+  // }, [suggestions])
 
   // console.log('requests: ', suggestions);
 
@@ -32,11 +34,12 @@ function SuggestionsList() {
         </div>
         // Else display suggestions
       : <div>
-          {suggestions.map((suggestion) => {
+          {suggestions.map((suggestion, index) => {
             const {title, upvotes, status, description, comments, category} = suggestion;
 
             return (
               <SuggestionCard
+              key={index}
               title={title}
               upvotes={upvotes}
               description={description}

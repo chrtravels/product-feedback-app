@@ -1,16 +1,16 @@
 import styles from './suggestionsLayout.module.scss';
 
 import SuggestionsNavbar from '../../components/suggestionsNavbar/SuggestionsNavbar';
-import SuggestionsList from '../../components/suggestionsList/SugguestionsList';
+import SuggestionsList from '../../components/suggestionsList/SuggestionsList';
 
 
-function SuggestionsLayout() {
+function SuggestionsLayout({suggestions}) {
 
   return (
     <div className={styles.container}>
       <SuggestionsNavbar />
 
-      <SuggestionsList />
+      <SuggestionsList suggestions={suggestions}/>
     </div>
   );
 }
