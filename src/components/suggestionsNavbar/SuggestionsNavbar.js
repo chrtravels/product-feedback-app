@@ -4,12 +4,12 @@ import styles from './suggestionsNavbar.module.scss';
 import {ReactComponent as SuggestionsIcon} from '../../assets/suggestions/icon-suggestions.svg';
 
 function SuggestionsNavbar() {
+
+
   return (
     <div className={styles.container}>
       <div>
-        <div className={styles.icon}>
-
-        </div>
+        <div className={styles.icon}></div>
 
         <div className={styles.content}>
           <SuggestionsIcon />
