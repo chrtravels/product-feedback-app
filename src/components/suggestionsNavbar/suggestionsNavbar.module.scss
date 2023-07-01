@@ -23,3 +23,18 @@ h3 {
   color: $white-font;
   margin: 0 2rem 0 1rem;
 }
+
+.backNav {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+
+  p {
+    margin: .2rem .5rem;
+  }
+
+  .goBack {
+    font-weight: bold;
+  }
+
+}
