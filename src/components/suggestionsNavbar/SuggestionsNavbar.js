@@ -7,7 +7,7 @@ import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.s
 function SuggestionsNavbar() {
   const location = useLocation();
   const path = location.pathname;
-  console.log(path)
+
 
   return (
     <div className={styles.container}>

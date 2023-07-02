@@ -24,7 +24,7 @@ function Sidebar({ onQuery }) {
 
     {/* Displaying the TagsWidget Component */}
     {render}
-
+    {/* Displaying the RoadmapWidget Component */}
     {renderRoadmapWidget}
 
     </div>

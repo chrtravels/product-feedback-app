@@ -183,3 +183,23 @@ h4 {
     color: $primary-color;
   }
 }
+
+// ROADMAP
+.circle-decorator {
+  height: .6rem;
+  width: .6rem;
+  margin: .6rem 1rem 0 0;
+  border-radius: 50%;
+}
+
+.planned {
+  background-color: $salmon;
+}
+
+.in-progress {
+  background-color: $primary-color;
+}
+
+.live {
+  background-color: $light-blue;
+}

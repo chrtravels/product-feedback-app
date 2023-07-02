@@ -1,4 +1,18 @@
 .container {
   display: flex;
-  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.columnContainer {
+  p {
+    margin: 0;
+  }
+
+  h4 {
+    margin-bottom: .4rem;
+  }
+}
+
+.columnContainer:not(:last-child) {
+  padding-right: 1rem;
 }

@@ -64,21 +64,21 @@ function RoadmapWidget() {
         <div className={styles.statusContainer}>
           <div className={styles.statusRow}>
             <div className={styles.leftContent}>
-              <div className={`${styles.circleDecorator} ${styles.planned}`}></div>
+              <div className={'circle-decorator planned'}></div>
               <p className="body-2 light-font">Planned</p>
             </div>
             <h3 className="light-font">{plannedCount}</h3>
           </div>
           <div className={styles.statusRow}>
             <div className={styles.leftContent}>
-              <div className={`${styles.circleDecorator} ${styles.inProgress}`}></div>
+              <div className={'circle-decorator in-progress'}></div>
               <p className="body-2 light-font">In-Progress</p>
             </div>
             <h3 className="light-font">{inProgressCount}</h3>
           </div>
           <div className={styles.statusRow}>
             <div className={styles.leftContent}>
-              <div className={`${styles.circleDecorator} ${styles.live}`}></div>
+              <div className={'circle-decorator live'}></div>
               <p className="body-2 light-font">Live</p>
             </div>
             <h3 className="light-font">{liveCount}</h3>
