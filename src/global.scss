@@ -90,6 +90,23 @@ body {
   background-color: $selected;
 }
 
+.tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: $secondary-color
+}
+
+.tagActive {
+  font-size: 12px;
+  font-weight: 700;
+  color: $white-font;
+}
+
+.allActive {
+  background-color: $secondary-color;
+}
+
+
 
 // FONTS
 

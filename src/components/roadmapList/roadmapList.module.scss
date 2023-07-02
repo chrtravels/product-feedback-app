@@ -1,18 +1,25 @@
 .container {
   display: flex;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .columnContainer {
+  flex-basis: 32%;
+  gap: 2%;
+
   p {
     margin: 0;
   }
 
-  h4 {
-    margin-bottom: .4rem;
+  h3 {
+    margin: 0 0 .4rem 0;
   }
 }
 
 .columnContainer:not(:last-child) {
   padding-right: 1rem;
+}
+
+.columnHeader p {
+  text-align: left;
 }

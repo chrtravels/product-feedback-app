@@ -10,11 +10,14 @@ function Roadmap() {
 
   return (
     <div className={styles.container}>
-      <SuggestionsNavbar />
+      <div className={styles.body}>
+        <SuggestionsNavbar />
 
-      <div className={styles.content}>
-        <RoadmapList suggestions={suggestions}/>
+        <div className={styles.content}>
+          <RoadmapList suggestions={suggestions}/>
+        </div>
       </div>
+
     </div>
 
   );

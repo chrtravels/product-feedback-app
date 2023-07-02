@@ -1,0 +1,86 @@
+@import '../../global.scss';
+
+.container {
+  width: 100%;
+  background-color: white;
+  margin-top: 1.7rem;
+  border-radius: 6px;
+}
+
+.colorBar {
+  height: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2rem 2rem 2rem;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: .7rem;
+
+  p {
+    margin-left: 1rem;
+  }
+}
+
+.bullet {
+  margin: 0;
+}
+
+.bodyContainer {
+  p {
+    text-align: left;
+  }
+
+  h3:hover {
+    color: #4761e6;
+  }
+}
+
+.metaDataContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.tagContainer {
+  margin: 0 .8rem .9rem 0;
+  padding:  .3rem 1rem;
+  cursor: pointer;
+}
+
+.voteCount {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.1rem;
+  width: 2.6rem;
+  padding:  .7rem;
+  cursor: pointer;
+}
+
+.commentCount {
+  position: absolute;
+  bottom: .8rem;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1rem;
+
+  h4 {
+    margin-left: .8rem;
+  }
+}
+
+#commentCount {
+
+}

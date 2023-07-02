@@ -67,8 +67,8 @@ function TagsWidget() {
           let category = word.charAt(0).toUpperCase() + word.slice(1);
 
           return (
-            <div key={index} className={`${styles.tagContainer} ${selectedCategory === category ? styles.allActive : ''} tag-vote`}>
-              <span className={selectedCategory === category ? styles.tagActive : styles.tag} id={category} onClick={handleTagSelect}>{category}</span>
+            <div key={index} className={`${styles.tagContainer} ${selectedCategory === category ? 'allActive' : ''} tag-vote`}>
+              <span className={selectedCategory === category ? 'tagActive' : 'tag'} id={category} onClick={handleTagSelect}>{category}</span>
             </div>
           )
         })}
