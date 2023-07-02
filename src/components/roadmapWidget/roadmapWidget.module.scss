@@ -13,15 +13,17 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+
+  span {
+    font-weight: 600;
+  }
 }
 
 .statusRow {
   display: flex;
   justify-content: space-between;
-}
 
-.statusRow {
   margin-left: 1rem;
 
   h3 {
@@ -29,11 +31,13 @@
   }
 }
 
+
+
 .leftContent {
   display: flex;
 
   p {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
   }
 }
 

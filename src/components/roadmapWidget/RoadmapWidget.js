@@ -57,7 +57,7 @@ function RoadmapWidget() {
           to="/roadmap"
           state={{ suggestions: roadmapSuggestions }}
           >
-            <span>View</span>
+            <span className='body-2'>View</span>
           </Link>
         </div>
 
