@@ -19,7 +19,9 @@ Build a product feedback app, with the ability to create, read, update & delete 
 
 ## Screenshot
 
-![](./screenshot.jpg)
+![Home Page](./src/assets/screenshots/feedback-frontpage.png)
+![Feedback Page](./src/assets/screenshots/feedback.png)
+![Add Feedback Page](./src/assets/screenshots/add-feedback.png)
 
 ## Detailed Requirements
 
