@@ -11,6 +11,7 @@ import Root from './routes/root';
 import ErrorPage from './error-page';
 import NewFeedback from './pages/newFeedback';
 import Roadmap from './pages/roadmap';
+import FeedbackDetail from './pages/feedbackDetail';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "roadmap",
     element: <Roadmap />
+  },
+  {
+    path: "feedback-detail",
+    element: <FeedbackDetail />
   },
 ]);
 

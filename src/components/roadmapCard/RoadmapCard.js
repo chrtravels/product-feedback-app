@@ -34,7 +34,7 @@ function RoadmapCard({item}) {
           </div>
           <div className={styles.commentCount}>
             <CommentsIcon />
-            <h4 id={styles.commentCount}>3</h4>
+            <h4 id={styles.commentCount}>{comments.length}</h4>
           </div>
         </div>
       </div>

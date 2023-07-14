@@ -43,7 +43,8 @@ function SuggestionsList({suggestions}) {
               title={title}
               upvotes={upvotes}
               description={description}
-
+              category={category}
+              comments={comments}
               />
             )
           })}

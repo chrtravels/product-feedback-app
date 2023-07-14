@@ -6,7 +6,6 @@ function RoadmapList({suggestions}) {
   const [planned, setPlanned] = useState([]);
   const [inProgress, setInProgress] = useState([]);
   const [live, setLive] = useState([]);
-  console.log(suggestions)
 
   useEffect(() => {
     const tempPlanned = [];

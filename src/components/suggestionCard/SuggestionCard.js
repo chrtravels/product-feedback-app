@@ -7,9 +7,12 @@ import { Link } from 'react-router-dom';
 function SuggestionCard(props) {
   const {title, upvotes, status, description, comments, category} = props;
 
-
   return (
-    <Link style={{textDecoration: 'none'}} to='/feedback-detail'>
+    <Link
+    style={{textDecoration: 'none'}}
+    to='/feedback-detail'
+    state={{ feedback: props}}
+    >
       <div className={styles.container}>
         <div className={styles.leftContent}>
           <div className={`${styles.voteCount} tag-vote`}>
@@ -28,7 +31,7 @@ function SuggestionCard(props) {
 
         <div className={styles.commentCount}>
           <CommentsIcon />
-          <h4 id={styles.commentCount}>3</h4>
+          <h4 id={styles.commentCount}>{comments.length}</h4>
         </div>
       </div>
     </Link>
