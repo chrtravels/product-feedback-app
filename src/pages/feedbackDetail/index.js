@@ -1,13 +1,14 @@
 import { useLocation } from 'react-router-dom';
 import SuggestionCard from '../../components/suggestionCard/SuggestionCard';
 import styles from './feedbackDetail.module.scss';
+import FeedbackList from '../../components/feedbackList/FeedbackList';
 
 function FeedbackDetail() {
   const location = useLocation();
   const { feedback } = location.state;
 
   const {title, upvotes, status, description, comments, category} = feedback;
-  console.log(comments)
+  // console.log(comments)
 
   return (
     <div className={styles.container}>
@@ -19,6 +20,8 @@ function FeedbackDetail() {
         category={category}
         comments={comments}
         />
+
+        <FeedbackList comments={comments}/>
       </div>
 
     </div>

@@ -1,0 +1,73 @@
+@import '../../global.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: white;
+  margin-top: 1.5rem;
+  padding: 2rem 2rem 0 2rem;
+  border-radius: 10px;
+}
+
+.commentsHeader {
+  width: 100%;
+}
+
+.commentsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+// .commentContainer {
+//   display: flex;
+//   margin-top: 2rem;;
+// }
+
+// .commentContainer:not(:last-child) {
+//   border-bottom-style: solid;
+//   border-bottom-color: #e2e4ec;
+//   border-bottom-width: 1px
+// }
+
+// .profilePhoto {
+//   margin-right: 2rem;
+
+//   img {
+//     height: 2.5rem;
+//     width: 2.5rem;
+
+//     border-radius: 50%;
+//   }
+// }
+
+// .content {
+//   width: 100%;
+
+//   p {
+//     text-align: left;
+//   }
+// }
+
+// .commentHeader {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .commentName {
+//   margin-bottom: .7rem;
+
+//   h4 {
+//     margin: 0;
+//   }
+// }
+
+// .reply {
+//   color: $secondary-color;
+//   font-weight: bold;
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+// }
