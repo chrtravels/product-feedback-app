@@ -4,7 +4,7 @@ import styles from './commentCard.module.scss';
 function CommentCard({comments, comment}) {
   const [currentComments, setCurrentComments] = useState(comments);
   const [currentComment, setCurrentComment] = useState(comment);
-  const {id, request_id, comment_id, content, image, name, username} = currentComment;
+  const {id, request_id, comment_id, content, image, name, username, replying_to} = currentComment;
 
   useEffect(() => {
     setCurrentComments(comments)
@@ -42,7 +42,7 @@ function CommentCard({comments, comment}) {
           </div>
 
           <div className={styles.body}>
-            <p className='body-2 light-font'>{content}</p>
+            <p className='body-2 light-font'>{replying_to ? <span className={styles.replyingTo}>@{replying_to}  </span> : ''}{content}</p>
 
             {currentComments.map((comment, i) => {
               if (comment.comment_id === id) {
