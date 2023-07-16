@@ -4,6 +4,7 @@ import styles from './feedbackDetail.module.scss';
 import FeedbackList from '../../components/feedbackList/FeedbackList';
 
 import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.svg';
+import AddComment from '../../components/addComment/AddComment';
 
 function FeedbackDetail() {
   const location = useLocation();
@@ -36,6 +37,8 @@ function FeedbackDetail() {
         />
 
         <FeedbackList comments={comments}/>
+
+        <AddComment />
       </div>
 
     </div>
