@@ -7,6 +7,31 @@
   margin: 4rem 0;
 }
 
+.feedbackHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .4rem;
+}
+
+.backNav {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+
+  p {
+    margin: .2rem .5rem;
+  }
+
+  .goBack {
+    font-weight: bold;
+  }
+
+  .goBack:hover {
+    text-decoration: underline;
+  }
+
+}
+
 .body {
   width: 75%;
 }

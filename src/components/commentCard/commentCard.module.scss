@@ -2,13 +2,16 @@
 
 .commentContainer {
   display: flex;
-  margin-top: 2rem;;
+  margin-top: 2rem;
 }
 
 .commentContainer:not(:last-child) {
-  border-bottom-style: solid;
-  border-bottom-color: #e2e4ec;
-  border-bottom-width: 1px;
+  border-bottom: 1px solid #e2e4ec;
+}
+
+.feedbackHeader {
+  display: flex;
+  justify-content: space-between;
 }
 
 .commentHeader {
@@ -16,7 +19,7 @@
 }
 
 .profilePhoto {
-  margin-right: 2rem;
+  margin-right: 1.8rem;
 
   img {
     height: 2.5rem;
@@ -56,13 +59,23 @@
   cursor: pointer;
 }
 
-.hasReplies {
-  border-left-style: solid;
-  border-left-color: #e2e4ec;
-  border-left-width: 1px
-}
-
 .replyingTo {
   color: $primary-color;
   font-weight: bold;
+}
+
+.body {
+  position: relative;
+
+}
+
+.isReply {
+  margin-left: -1.5rem;
+}
+
+.borderLeft {
+  margin-bottom: 1rem;
+  border-left: 1px solid #e2e4ec;
+  padding-left: 3rem;
+  margin-left: -3.43rem;
 }

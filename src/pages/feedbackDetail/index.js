@@ -1,7 +1,9 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import SuggestionCard from '../../components/suggestionCard/SuggestionCard';
 import styles from './feedbackDetail.module.scss';
 import FeedbackList from '../../components/feedbackList/FeedbackList';
+
+import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.svg';
 
 function FeedbackDetail() {
   const location = useLocation();
@@ -12,6 +14,18 @@ function FeedbackDetail() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.feedbackHeader}>
+        <div className={styles.backNav}>
+          <LeftArrow stroke='#3A4374'/>
+          <Link to="/" style={{textDecoration: 'none'}}>
+            <p className={`${styles.goBack} font-dark body-3`}>Go Back</p>
+          </Link>
+
+        </div>
+
+        <button className='button button-secondary'>Edit Feedback</button>
+      </div>
+
       <div className={styles.body}>
         <SuggestionCard
         title={title}
