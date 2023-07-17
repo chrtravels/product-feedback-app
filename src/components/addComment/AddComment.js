@@ -7,6 +7,7 @@ function AddComment() {
 
   const onChange = e => {
     setComment(e.target.value)
+    setCharacterCount(250 - comment.length)
   }
 
   const handleSubmit = (event) => {
@@ -33,7 +34,7 @@ function AddComment() {
         <p className='body-2 light-font'>{characterCount} Characters Left</p>
 
         <div className={styles.button}>
-          <button className='button button-primary'>Post Comment</button>
+          <button className='button button-primary' onClick={handleSubmit}>Post Comment</button>
         </div>
       </div>
     </div>
