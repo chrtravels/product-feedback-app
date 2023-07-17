@@ -7,7 +7,7 @@ function AddComment() {
 
   const onChange = e => {
     setComment(e.target.value)
-    setCharacterCount(250 - comment.length)
+    setCharacterCount(250 - e.target.value.length)
   }
 
   const handleSubmit = (event) => {
