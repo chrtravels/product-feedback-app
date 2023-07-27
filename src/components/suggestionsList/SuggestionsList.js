@@ -35,11 +35,12 @@ function SuggestionsList({suggestions}) {
         // Else display suggestions
       : <div>
           {suggestions.map((suggestion, index) => {
-            const {title, upvotes, status, description, comments, category} = suggestion;
+            const {id, title, upvotes, status, description, comments, category} = suggestion;
 
             return (
               <SuggestionCard
               key={index}
+              id={id}
               title={title}
               upvotes={upvotes}
               description={description}

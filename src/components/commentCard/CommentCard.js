@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import styles from './commentCard.module.scss';
+import CommentReply from '../commentReply/CommentReply';
 
 function CommentCard({comments, comment}) {
   const [currentComments, setCurrentComments] = useState(comments);
   const [currentComment, setCurrentComment] = useState(comment);
   const [hasReplies, setHasReplies] = useState(false);
+  const [showPostReply, setShowPostReply] = useState(false);
   // const [isReply, setIsReply] = useState(false);
   const {id, request_id, comment_id, content, image, name, username, replying_to} = currentComment;
 
@@ -24,7 +26,6 @@ function CommentCard({comments, comment}) {
 
   let imageName = image.slice(image.lastIndexOf('/'));
 
-  console.log('current: ', currentComment)
 
   return (
     <div className={`${styles.commentContainer} ${currentComment.replying_to !== null ? styles.isReply : ''}`}>
@@ -39,7 +40,7 @@ function CommentCard({comments, comment}) {
               <h4 className='dark-font'>{name}</h4>
               <span className='body-2 light-font'>{`@${username}`}</span>
             </div>
-            <button className={`${styles.reply} body-3`}>Reply</button>
+            <button className={`${styles.reply} body-3`} onClick={(e) => setShowPostReply(showPostReply ? false : true)}>Reply</button>
           </div>
 
           <div className={`${styles.body} ${hasReplies ? styles.borderLeft : ''}`}>
@@ -54,6 +55,10 @@ function CommentCard({comments, comment}) {
                 )
               }
             })}
+
+            {showPostReply &&
+              <CommentReply />
+            }
           </div>
 
         </div>

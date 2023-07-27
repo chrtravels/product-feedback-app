@@ -10,8 +10,9 @@ function FeedbackDetail() {
   const location = useLocation();
   const { feedback } = location.state;
 
-  const {title, upvotes, status, description, comments, category} = feedback;
+  const {id, title, upvotes, status, description, comments, category} = feedback;
   // console.log(comments)
+  console.log('feedback: ', feedback)
 
   return (
     <div className={styles.container}>
@@ -38,7 +39,7 @@ function FeedbackDetail() {
 
         <FeedbackList comments={comments}/>
 
-        <AddComment />
+        <AddComment feedbackId={id}/>
       </div>
 
     </div>

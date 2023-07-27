@@ -1,25 +1,17 @@
 @import '../../global.scss';
 
 .container {
+  display: flex;
   background-color: white;
-  margin-top: 1.5rem;
-  padding: 1rem .5rem 0 1rem;
+  margin: 0 0 1rem 0;
+  padding: 0;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.commentFooter {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 0 1rem 1rem;
-
-  p {
-    margin-top: 1rem;
-  }
-}
-
 .formRow {
-  margin: 1.4rem 2.5rem 0 1rem;
+  flex-grow: 1;
+  margin-right: 3rem;
 
   textarea {
     width: 100%;
@@ -40,5 +32,13 @@
 
   textarea::placeholder {
     color: #8c92b3;
+  }
+}
+
+.button {
+  padding: 0;
+
+  button {
+    width: 120px;
   }
 }
