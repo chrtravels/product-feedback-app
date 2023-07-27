@@ -1,6 +1,6 @@
 import styles from './newFeedback.module.scss';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.svg';
 import {ReactComponent as plusIcon} from '../../assets/shared/icon-plus.svg';
@@ -9,6 +9,8 @@ import { useState } from 'react';
 
 
 function NewFeedback() {
+  const navigate = useNavigate();
+
   const [state, setState] = useState({
     title: '',
     category: '',
@@ -86,7 +88,15 @@ function NewFeedback() {
                 </div>
 
                 <div className={styles.buttonContainer}>
-                  <button className='button button-cancel'>Cancel</button>
+                  <Link
+                  to={'..'}
+                  onClick={(e) => {
+                  e.preventDefault();
+                  navigate(-1);
+                  }}
+                  >
+                    <button className='button button-cancel'>Cancel</button>
+                  </Link>
                   <button className='button button-primary'>Add Feedback</button>
                 </div>
 
