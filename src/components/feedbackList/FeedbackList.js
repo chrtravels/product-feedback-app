@@ -3,7 +3,6 @@ import CommentCard from '../commentCard/CommentCard';
 
 
 function FeedbackList({comments}) {
-  console.log(comments)
 
   return (
     <div className={styles.container}>

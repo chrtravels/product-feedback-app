@@ -2,6 +2,7 @@ import styles from  './roadmapCard.module.scss';
 
 import {ReactComponent as CommentsIcon} from '../../assets/shared/icon-comments.svg';
 import {ReactComponent as UpArrow} from '../../assets/shared/icon-arrow-up.svg';
+import { Link } from 'react-router-dom';
 
 function RoadmapCard({item}) {
   const {title, upvotes, status, description, category, comments} = item;
@@ -19,7 +20,13 @@ function RoadmapCard({item}) {
             <p className="body-2 light-font">{caseCorrectedStatus}</p>
         </div>
         <div className={styles.bodyContainer}>
-          <h3 className='dark-font'>{title}</h3>
+          <Link
+          style={{textDecoration: 'none'}}
+          to='/feedback-detail'
+          state={{ feedback: item}}
+          >
+            <h3 className='dark-font'>{title}</h3>
+          </Link>
           <p className="body-2 light-font">{description}</p>
         </div>
         <div className={styles.metaDataContainer}>
