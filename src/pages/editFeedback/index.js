@@ -69,7 +69,14 @@ function EditFeedback() {
                   <p className='light-font body-3'>
                     Choose a category for your feedback
                   </p>
-                  <select name='category' value={state.category} onChange={handleChange}>
+                  <select
+                  id='category'
+                  name='category'
+                  value={state.category}
+                  onChange={(e) => setState((state) => ({
+                      ...state, [e.target.id]: e.target.value
+                    }))}
+                  >
                     <option value="feature">Feature</option>
                     <option value="ui">UI</option>
                     <option value="ux">UX</option>
