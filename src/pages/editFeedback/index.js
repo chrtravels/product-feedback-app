@@ -1,6 +1,6 @@
 import styles from './editFeedback.module.scss';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.svg';
 import {ReactComponent as EditIcon} from '../../assets/shared/icon-edit-feedback.svg';
@@ -9,6 +9,8 @@ import { useState } from 'react';
 
 
 function EditFeedback() {
+  const navigate = useNavigate();
+
   const [state, setState] = useState({
     title: '',
     category: '',
@@ -16,13 +18,6 @@ function EditFeedback() {
     detail: ''
   })
 
-  console.log('title: ', state.title);
-  console.log('detail: ', state.detail);
-  console.log('status: ', state.status);
-
-  const handleChange = e => {
-    setState({...state, [e.target.title]: e.target.value})
-  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -33,7 +28,13 @@ function EditFeedback() {
       <div className={styles.body}>
         <div className={styles.backContainer}>
           <LeftArrow className={styles.leftArrow} stroke='#4661E6'/>
-          <Link to="/">
+          <Link
+          to={'..'}
+          onClick={(e) => {
+          e.preventDefault();
+          navigate(-1);
+          }}
+          >
             <p className={`${styles.goBack} light-font body-3`}>Go Back</p>
           </Link>
         </div>
