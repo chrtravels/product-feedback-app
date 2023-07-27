@@ -132,7 +132,15 @@ function EditFeedback() {
                   </div>
 
                   <div className={styles.leftButtons}>
+                  <Link
+                  to={'..'}
+                  onClick={(e) => {
+                  e.preventDefault();
+                  navigate(-1);
+                  }}
+                  >
                     <button className='button button-cancel'>Cancel</button>
+                  </Link>
                     <button className='button button-primary'>Add Feedback</button>
                   </div>
                 </div>
