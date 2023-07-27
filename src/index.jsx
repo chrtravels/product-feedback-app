@@ -12,6 +12,7 @@ import ErrorPage from './error-page';
 import NewFeedback from './pages/newFeedback';
 import Roadmap from './pages/roadmap';
 import FeedbackDetail from './pages/feedbackDetail';
+import EditFeedback from './pages/editFeedback';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "feedback-detail",
     element: <FeedbackDetail />
+  },
+  {
+    path: "edit-feedback",
+    element: <EditFeedback />
   },
 ]);
 

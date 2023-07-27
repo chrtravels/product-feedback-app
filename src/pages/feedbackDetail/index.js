@@ -33,7 +33,9 @@ function FeedbackDetail() {
 
         </div>
 
-        <button className='button button-secondary'>Edit Feedback</button>
+        <Link to="/edit-feedback">
+          <button className='button button-secondary'>Edit Feedback</button>
+        </Link>
       </div>
 
       <div className={styles.body}>
