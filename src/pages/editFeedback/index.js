@@ -1,6 +1,6 @@
 import styles from './editFeedback.module.scss';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.svg';
 import {ReactComponent as EditIcon} from '../../assets/shared/icon-edit-feedback.svg';
@@ -9,12 +9,16 @@ import { useState } from 'react';
 
 
 function EditFeedback() {
+  const location = useLocation();
+  const { feedback } = location.state;
   const navigate = useNavigate();
 
+  const {title, category, status} = feedback;
+
   const [state, setState] = useState({
-    title: '',
-    category: '',
-    status: '',
+    title: `${title}`,
+    category: `${category}`,
+    status: `${status}`,
     detail: ''
   })
 

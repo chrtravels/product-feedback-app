@@ -8,16 +8,7 @@ import SuggestionCard from '../suggestionCard/SuggestionCard';
 
 
 function SuggestionsList({suggestions}) {
-  // const [suggestions, setSuggestions] = useState([]);
-  // const [temp, setTemp] = useState(suggestions);
 
-  // useEffect(() => {
-  //   // getRequests().then(data => setSuggestions(data));
-  //   setTemp(suggestions);
-
-  // }, [suggestions])
-
-  // console.log('requests: ', suggestions);
 
   return (
     <div className={styles.container}>
@@ -43,6 +34,7 @@ function SuggestionsList({suggestions}) {
               id={id}
               title={title}
               upvotes={upvotes}
+              status={status}
               description={description}
               category={category}
               comments={comments}

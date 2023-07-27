@@ -12,8 +12,7 @@ function FeedbackDetail() {
   const navigate = useNavigate();
 
   const {id, title, upvotes, status, description, comments, category} = feedback;
-  // console.log(comments)
-  console.log('feedback: ', feedback)
+
 
   return (
     <div className={styles.container}>
@@ -33,7 +32,7 @@ function FeedbackDetail() {
 
         </div>
 
-        <Link to="/edit-feedback">
+        <Link to="/edit-feedback" state={{ feedback: feedback }}>
           <button className='button button-secondary'>Edit Feedback</button>
         </Link>
       </div>
