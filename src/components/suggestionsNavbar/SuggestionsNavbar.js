@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styles from './suggestionsNavbar.module.scss';
 
 import {ReactComponent as SuggestionsIcon} from '../../assets/suggestions/icon-suggestions.svg';
@@ -7,7 +7,7 @@ import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.s
 function SuggestionsNavbar() {
   const location = useLocation();
   const path = location.pathname;
-
+  const navigate = useNavigate();
 
   return (
     <div className={styles.container}>
@@ -26,7 +26,13 @@ function SuggestionsNavbar() {
               <div className={styles.roadmapContent}>
                 <div className={styles.backNav}>
                   <LeftArrow stroke='white'/>
-                  <Link to="/">
+                  <Link
+                  to={'..'}
+                  onClick={(e) => {
+                  e.preventDefault();
+                  navigate(-1);
+                  }}
+                  >
                     <p className={`${styles.goBack} white-font body-3`}>Go Back</p>
                   </Link>
                 </div>

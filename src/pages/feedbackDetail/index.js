@@ -1,4 +1,4 @@
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import SuggestionCard from '../../components/suggestionCard/SuggestionCard';
 import styles from './feedbackDetail.module.scss';
 import FeedbackList from '../../components/feedbackList/FeedbackList';
@@ -9,6 +9,7 @@ import AddComment from '../../components/addComment/AddComment';
 function FeedbackDetail() {
   const location = useLocation();
   const { feedback } = location.state;
+  const navigate = useNavigate();
 
   const {id, title, upvotes, status, description, comments, category} = feedback;
   // console.log(comments)
@@ -19,7 +20,14 @@ function FeedbackDetail() {
       <div className={styles.feedbackHeader}>
         <div className={styles.backNav}>
           <LeftArrow stroke='#3A4374'/>
-          <Link to="/" style={{textDecoration: 'none'}}>
+          <Link
+          to={'..'}
+          style={{textDecoration: 'none'}}
+          onClick={(e) => {
+          e.preventDefault();
+          navigate(-1);
+          }}
+          >
             <p className={`${styles.goBack} font-dark body-3`}>Go Back</p>
           </Link>
 
