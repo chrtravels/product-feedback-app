@@ -1,32 +1,16 @@
-@import '../../global.scss';
-
 .container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
   margin-top: 1rem;
-  padding: 1.5rem 2rem 0 2rem;
+  padding: 2rem 2rem 0 2rem;
   border-radius: 10px;
   cursor: pointer;
 }
 
-.link {
-  width: 100%;
-}
-
-.voteContainer {
-
-}
-
-.cardBody {
+.leftContent {
   display: flex;
-  justify-content: space-between;
-  flex-basis: 100%;
-}
-
-.cardBody:hover {
-  h3 {
-    color: $secondary-color;
-  }
 }
 
 .content {

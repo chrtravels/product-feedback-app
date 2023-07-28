@@ -1,14 +1,13 @@
 import styles from './suggestionsList.module.scss';
 
-import { useEffect, useState } from 'react';
-import { getRequests } from '../../ApiService';
+// import { useEffect, useState } from 'react';
+// import { getRequests } from '../../ApiService';
 
 import {ReactComponent as Empty} from '../../assets/suggestions/illustration-empty.svg';
 import SuggestionCard from '../suggestionCard/SuggestionCard';
 
 
 function SuggestionsList({suggestions}) {
-
 
   return (
     <div className={styles.container}>
@@ -26,7 +25,7 @@ function SuggestionsList({suggestions}) {
         // Else display suggestions
       : <div>
           {suggestions.map((suggestion, index) => {
-            const {id, title, upvotes, status, description, comments, category} = suggestion;
+            const {id, title, upvotes, upvoted, status, description, comments, category} = suggestion;
 
             return (
               <SuggestionCard
@@ -34,6 +33,7 @@ function SuggestionsList({suggestions}) {
               id={id}
               title={title}
               upvotes={upvotes}
+              upvoted={upvoted}
               status={status}
               description={description}
               category={category}

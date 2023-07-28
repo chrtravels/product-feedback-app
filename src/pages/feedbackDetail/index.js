@@ -13,7 +13,6 @@ function FeedbackDetail() {
 
   const {id, title, upvotes, status, description, comments, category} = feedback;
 
-
   return (
     <div className={styles.container}>
       <div className={styles.feedbackHeader}>
@@ -39,6 +38,7 @@ function FeedbackDetail() {
 
       <div className={styles.body}>
         <SuggestionCard
+        id={id}
         title={title}
         upvotes={upvotes}
         description={description}
