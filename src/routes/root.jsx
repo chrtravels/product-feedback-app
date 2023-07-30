@@ -2,24 +2,32 @@ import styles from './root.module.scss';
 import '../global.scss';
 import Sidebar from '../layouts/sidebar/Sidebar';
 import SuggestionsLayout from '../layouts/suggestions/SuggestionsLayout';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-
+import { getRequests } from '../ApiService';
 
 
 function Root() {
-  // Query suggestions from the Sidebar and pass them to SuggestionsLayout
-  const [query, setQuery] = useState([]);
+
+  // Instead of Querying sidebar, lifting state to root
+  const [requests, setRequests] = useState();
+  const [filteredByTag, setFilteredByTag] = useState([]);
+
+  useEffect(() => {
+    getRequests().then((data) => setRequests(data));
+  }, [])
 
   return (
     <div className={styles.container}>
      <Sidebar
       className={styles.sidebar}
-      onQuery={setQuery}
+      requests={requests}
+      setRequests={setRequests}
+      setFilteredByTag={setFilteredByTag}
     />
 
      <div className={styles.content}>
-      <SuggestionsLayout suggestions={query}/>
+      <SuggestionsLayout filteredByTag={filteredByTag} />
      </div>
     </div>
   );

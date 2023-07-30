@@ -1,16 +1,9 @@
 import TagsWidget from '../../components/tagsWidget/TagsWidget';
 import styles from './sidebar.module.scss';
-import { useEffect } from 'react';
 import RoadmapWidget from '../../components/roadmapWidget/RoadmapWidget';
 
-function Sidebar({ onQuery }) {
-  const { render, suggestions } = TagsWidget();
-  const { renderRoadmapWidget, roadmapSuggestions} = RoadmapWidget();
+function Sidebar({ requests, setRequests, setFilteredByTag }) {
 
-  // Pass suggestions to parent root.jsx
-  useEffect(() => {
-    onQuery(suggestions);
-  });
 
   return (
     <div className={styles.container}>
@@ -23,9 +16,9 @@ function Sidebar({ onQuery }) {
       </div>
 
     {/* Displaying the TagsWidget Component */}
-    {render}
+    <TagsWidget requests={requests} setFilteredByTag={setFilteredByTag} />
     {/* Displaying the RoadmapWidget Component */}
-    {renderRoadmapWidget}
+    <RoadmapWidget requests={requests} />
 
     </div>
   );

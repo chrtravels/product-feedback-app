@@ -1,11 +1,10 @@
 import styles from './roadmapWidget.module.scss';
 
 import { useEffect, useState } from 'react';
-import { getRequests } from '../../ApiService';
 import { Link } from 'react-router-dom';
 
 
-function RoadmapWidget() {
+function RoadmapWidget({ requests }) {
   const [roadmapSuggestions, setRoadmapSuggestions] = useState([]);
   const [plannedCount, setPlannedCount] = useState(0);
   const [inProgressCount, setInProgressCount] = useState(0)
@@ -18,9 +17,9 @@ function RoadmapWidget() {
     let inProgress = 0;
     let live = 0;
 
-    getRequests().then(data => {
-      // Suggestion that are on the roadmap will be passed to the roadmap component
-      data.forEach((el) => {
+    // Suggestion that are on the roadmap will be passed to the roadmap component
+    if (requests) {
+      requests.forEach((el) => {
         const status = el.status;
 
         if (status !== 'suggestion') {
@@ -40,16 +39,14 @@ function RoadmapWidget() {
       setPlannedCount(planned)
       setInProgressCount(inProgress)
       setLiveCount(live)
+    }
 
-    });
-  }, [])
+  }, [requests])
 
   // console.log('roadmap suggestions ', roadmapSuggestions);
 
 
-  return {
-    roadmapSuggestions,
-    renderRoadmapWidget: (
+  return (
       <div className={styles.container}>
         <div className={styles.header}>
           <h3 className='dark-font'>Roadmap</h3>
@@ -86,7 +83,6 @@ function RoadmapWidget() {
         </div>
       </div>
     )
-  };
 }
 
 export default RoadmapWidget;

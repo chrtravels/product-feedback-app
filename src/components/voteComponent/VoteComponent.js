@@ -26,7 +26,6 @@ function VoteComponent({ request }) {
   }
 
 
-
   return (
     <div className={`${styles.container} tag-vote`} onClick={handleClick}>
     <UpArrow />

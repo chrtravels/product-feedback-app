@@ -1,17 +1,15 @@
 import styles from './suggestionsList.module.scss';
 
-// import { useEffect, useState } from 'react';
-// import { getRequests } from '../../ApiService';
-
 import {ReactComponent as Empty} from '../../assets/suggestions/illustration-empty.svg';
 import SuggestionCard from '../suggestionCard/SuggestionCard';
 
 
-function SuggestionsList({suggestions}) {
+function SuggestionsList({ filteredByTag }) {
+  // Filter only suggestions
 
   return (
     <div className={styles.container}>
-      {!suggestions
+      {!filteredByTag
         // If no suggestions, display no feedback page
       ? <div className={styles.noFeedbackContainer}>
           <div className={styles.content}>
@@ -24,8 +22,8 @@ function SuggestionsList({suggestions}) {
         </div>
         // Else display suggestions
       : <div>
-          {suggestions.map((suggestion, index) => {
-            const {id, title, upvotes, upvoted, status, description, comments, category} = suggestion;
+          {filteredByTag.map((request, index) => {
+            const {id, title, upvotes, upvoted, status, description, comments, category} = request;
 
             return (
               <SuggestionCard

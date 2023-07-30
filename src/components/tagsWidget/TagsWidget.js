@@ -4,21 +4,21 @@ import { useEffect, useState } from 'react';
 import { getRequests } from '../../ApiService';
 
 
-function TagsWidget() {
-  const [suggestions, setSuggestions] = useState([]);
+function TagsWidget({ requests, setFilteredByTag}) {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [allIsActive, setAllIsActive] = useState(true);
-  const [categoryIsActive, setCategoryIsActive] = useState(false);
-  const [selectedSuggestions, setSelectedSuggestions] = useState([]);
+  // const [categoryIsActive, setCategoryIsActive] = useState(false);
+  // const [selectedSuggestions, setSelectedSuggestions] = useState([]);
 
   useEffect(() => {
-    const tempSuggestions = [];
-    const tempCategories = [];
 
-    getRequests().then(data => {
+    if (requests) {
+      const tempSuggestions = [];
+      const tempCategories = [];
+
       // Suggestion Requests will be passed to the main suggestion layout & shown based on category click
-      data.forEach((el) => {
+      requests.forEach((el) => {
         if (!tempCategories.includes(el.category)) {
           tempCategories.push(el.category);
         }
@@ -33,14 +33,13 @@ function TagsWidget() {
         }
       });
 
-      setSuggestions(tempSuggestions);
+      setFilteredByTag(tempSuggestions);
       setCategories(tempCategories);
+    }
 
-    });
-  }, [selectedCategory, allIsActive])
+  }, [requests, selectedCategory, allIsActive])
 
-  // console.log('suggestions ', suggestions);
-  // console.log('categories: ', categories)
+
 
   // Functions to handle toggling of tags
   function handleTagSelect(e) {
@@ -55,9 +54,7 @@ function TagsWidget() {
   }
   // End of toggle tag functions
 
-  return {
-    suggestions,
-    render: (
+  return (
       <div className={styles.container}>
         <div className={`${styles.tagContainer} ${allIsActive ? styles.allActive : 'tag-vote'} tag-vote`}>
         <span className={allIsActive ? styles.tagActive : styles.tag} id={styles.all} onClick={handleSelectAll}>All</span>
@@ -75,7 +72,6 @@ function TagsWidget() {
 
       </div>
     )
-  };
 }
 
 export default TagsWidget;
