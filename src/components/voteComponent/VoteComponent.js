@@ -15,6 +15,8 @@ function VoteComponent({ request }) {
     upvoted: hasVoted
   }
 
+  // remove use Effect and put upvote in another function, to be called when setVotes updates
+  // Right now upvotes is being called when the component loads which is unnecessary.
   useEffect(() => {
     upVote(requestObject);
   }, [votes, hasVoted])
