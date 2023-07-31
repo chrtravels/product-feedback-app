@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.svg';
 import {ReactComponent as plusIcon} from '../../assets/shared/icon-plus.svg';
 import { useState } from 'react';
+import { addRequest } from '../../ApiService';
 
 
 
@@ -13,16 +14,17 @@ function NewFeedback() {
 
   const [state, setState] = useState({
     title: '',
-    category: '',
-    detail: ''
+    upvotes: 0,
+    status: 'suggestion',
+    description: '',
+    category: 'feature',
+    upvoted: false
   })
-
-  const onChange = e => {
-    setState({...state, [e.target.title]: e.target.value})
-  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    addRequest(state);
+    navigate('/');
   }
 
   return (
@@ -55,8 +57,12 @@ function NewFeedback() {
                   </p>
                   <input
                     type='text'
+                    id='title'
+                    name='title'
                     value={state.title}
-                    onChange={onChange}
+                    onChange={(e) => setState((state) => ({
+                      ...state, [e.target.id]: e.target.value
+                    }))}
                   />
                 </div>
 
@@ -65,7 +71,13 @@ function NewFeedback() {
                   <p className='light-font body-3'>
                     Choose a category for your feedback
                   </p>
-                  <select name='category' value={state.category} onChange={onChange}>
+                  <select
+                  id='category'
+                  name='category'
+                  value={state.category}
+                  onChange={(e) => setState((state) => ({
+                      ...state, [e.target.id]: e.target.value
+                    }))}>
                     <option value="feature">Feature</option>
                     <option value="ui">UI</option>
                     <option value="ux">UX</option>
@@ -80,10 +92,13 @@ function NewFeedback() {
                     Include any specific comments on what should be improved, added, etc.
                   </p>
                   <textarea
-                    name='detail'
+                    id='description'
+                    name='description'
                     rows='4'
-                    value={state.detail}
-                    onChange={onChange}
+                    value={state.description}
+                    onChange={(e) => setState((state) => ({
+                      ...state, [e.target.id]: e.target.value
+                    }))}
                   />
                 </div>
 
@@ -97,7 +112,7 @@ function NewFeedback() {
                   >
                     <button className='button button-cancel'>Cancel</button>
                   </Link>
-                  <button className='button button-primary'>Add Feedback</button>
+                  <button className='button button-primary' onClick={handleSubmit}>Add Feedback</button>
                 </div>
 
               </form>

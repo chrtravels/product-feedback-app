@@ -10,21 +10,22 @@ export const getRequests = async () => {
   }
 }
 
-export const addRequest = async () => {
+export const addRequest = async (request) => {
   const options = {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-    }
+    },
+    body: JSON.stringify(request)
   };
 
   try {
-    const response = await fetch(URL + '/feedback-detail', options);
+    const response = await fetch(URL + '/new-feedback', options);
     const data = response.json();
     return data;
   } catch (error) {
-    throw new Error('Error adding comment')
+    throw new Error('Error submitting request')
   }
 }
 
@@ -38,11 +39,11 @@ export const addComment = async () => {
   };
 
   try {
-    const response = await fetch(URL + '/feedback-detail', options);
+    const response = await fetch(URL + '/feedback-detail/comment', options);
     const data = response.json();
     return data;
   } catch (error) {
-    throw new Error('Error adding comment')
+    throw new Error('Error submitting comment')
   }
 }
 
