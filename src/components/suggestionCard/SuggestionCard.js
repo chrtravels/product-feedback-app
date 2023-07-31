@@ -1,7 +1,6 @@
 import styles from './suggestionCard.module.scss';
 
 import {ReactComponent as CommentsIcon} from '../../assets/shared/icon-comments.svg';
-import {ReactComponent as UpArrow} from '../../assets/shared/icon-arrow-up.svg';
 import { Link } from 'react-router-dom';
 import VoteComponent from '../voteComponent/VoteComponent';
 

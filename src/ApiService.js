@@ -29,6 +29,45 @@ export const addRequest = async (request) => {
   }
 }
 
+export const deleteFeedback = async (feedback) => {
+  console.log(feedback)
+  const options = {
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(feedback)
+  }
+
+  try {
+    const response = await fetch(URL + `/edit-feedback/`, options);
+    const data = response.json();
+    return data;
+  } catch (error) {
+    throw new Error('Error deleting request')
+  }
+}
+
+export const updateRequest = async (request) => {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(request)
+  };
+
+  try {
+    const response = await fetch(URL +  `/edit-feedback/${request.id}/update`, options);
+    const data = response.json();
+    return data;
+  } catch (error) {
+    throw new Error('Error updating request')
+  }
+}
+
 export const addComment = async () => {
   const options = {
     method: 'POST',

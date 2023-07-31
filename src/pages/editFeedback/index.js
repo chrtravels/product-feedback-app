@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.svg';
 import {ReactComponent as EditIcon} from '../../assets/shared/icon-edit-feedback.svg';
 import { useState } from 'react';
+import { deleteFeedback } from '../../ApiService';
 
 
 
@@ -12,19 +13,24 @@ function EditFeedback() {
   const location = useLocation();
   const { feedback } = location.state;
   const navigate = useNavigate();
-
-  const {title, category, status} = feedback;
+  const {id, title, category, status, description} = feedback;
 
   const [state, setState] = useState({
-    title: `${title}`,
-    category: `${category}`,
-    status: `${status}`,
-    detail: ''
+    title: title,
+    category: category,
+    status: status,
+    description: description
   })
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
+  }
+
+  const handleDelete = (event) => {
+    event.preventDefault();
+    deleteFeedback(feedback);
+    navigate('/');
   }
 
   return (
@@ -49,7 +55,7 @@ function EditFeedback() {
           </div>
 
           <div className={styles.cardContentContainer}>
-            <h1 className="dark-font">Create New Feedback</h1>
+            <h1 className="dark-font">Editing '{title}'</h1>
 
             <div className={styles.formContainer}>
               <form onSubmit={handleSubmit}>
@@ -116,10 +122,10 @@ function EditFeedback() {
                     Include any specific comments on what should be improved, added, etc.
                   </p>
                   <textarea
-                    id='detail'
-                    name='detail'
+                    id='description'
+                    name='description'
                     rows='4'
-                    value={state.detail}
+                    value={state.description}
                     onChange={(e) => setState((state) => ({
                       ...state, [e.target.id]: e.target.value
                     }))}
@@ -128,7 +134,7 @@ function EditFeedback() {
 
                 <div className={styles.buttonContainer}>
                   <div>
-                    <button className='button button-warning'>Delete</button>
+                    <button className='button button-warning' onClick={handleDelete}>Delete</button>
                   </div>
 
                   <div className={styles.leftButtons}>
