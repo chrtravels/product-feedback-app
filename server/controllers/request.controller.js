@@ -8,11 +8,36 @@ exports.getRequests = async ctx => {
   }
 }
 
-exports.postRequest = async ctx => {
-  console.log(ctx)
+exports.addRequest = async ctx => {
   try {
-    console.log(ctx.request.body);
-    await requestModel.postNote(ctx.request.body);
+    await requestModel.postRequest(ctx.request.body);
+    ctx.status = 201;
+  } catch (error) {
+    ctx.throw(500, error);
+  }
+}
+
+exports.deleteRequest = async ctx => {
+  try {
+    await requestModel.deleteRequest(ctx.request.body);
+    ctx.status = 201;
+  } catch (error) {
+    ctx.throw(500, error)
+  }
+}
+
+exports.addComment = async ctx => {
+  try {
+    await requestModel.postComment(ctx.request.body);
+    ctx.status = 201;
+  } catch (error) {
+    ctx.throw(500, error);
+  }
+}
+
+exports.upVote = async ctx => {
+  try {
+    await requestModel.upVote(ctx.request.body);
     ctx.status = 201;
   } catch (error) {
     ctx.throw(500, error);
