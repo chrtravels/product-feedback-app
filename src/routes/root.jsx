@@ -15,7 +15,8 @@ function Root() {
 
   useEffect(() => {
     getRequests().then((data) => setRequests(data));
-  }, [])
+  }, [setRequests])
+
 
   return (
     <div className={styles.container}>
@@ -27,7 +28,7 @@ function Root() {
     />
 
      <div className={styles.content}>
-      <SuggestionsLayout filteredByTag={filteredByTag} />
+      <SuggestionsLayout filteredByTag={filteredByTag} requests={requests} setRequests={setRequests} />
      </div>
     </div>
   );

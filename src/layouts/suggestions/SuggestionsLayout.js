@@ -4,13 +4,13 @@ import SuggestionsNavbar from '../../components/suggestionsNavbar/SuggestionsNav
 import SuggestionsList from '../../components/suggestionsList/SuggestionsList';
 
 
-function SuggestionsLayout({ filteredByTag }) {
+function SuggestionsLayout({ filteredByTag, requests, setRequests }) {
 
   return (
     <div className={styles.container}>
       <SuggestionsNavbar />
 
-      <SuggestionsList filteredByTag={filteredByTag} />
+      <SuggestionsList filteredByTag={filteredByTag} requests={requests} setRequests={setRequests} />
     </div>
   );
 }

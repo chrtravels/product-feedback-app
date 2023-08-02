@@ -11,7 +11,7 @@ function FeedbackDetail() {
   const { feedback } = location.state;
   const navigate = useNavigate();
 
-  const {id, title, upvotes, status, description, comments, category} = feedback;
+  const {id, comments } = feedback;
 
   return (
     <div className={styles.container}>
@@ -39,11 +39,7 @@ function FeedbackDetail() {
       <div className={styles.body}>
         <SuggestionCard
         id={id}
-        title={title}
-        upvotes={upvotes}
-        description={description}
-        category={category}
-        comments={comments}
+        request={feedback}
         />
 
         <FeedbackList comments={comments}/>

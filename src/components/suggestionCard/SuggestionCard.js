@@ -4,19 +4,19 @@ import {ReactComponent as CommentsIcon} from '../../assets/shared/icon-comments.
 import { Link } from 'react-router-dom';
 import VoteComponent from '../voteComponent/VoteComponent';
 
-function SuggestionCard(props) {
-  const {id, title, upvotes, description, comments, category} = props;
+function SuggestionCard({ request, requests, setRequests }) {
+  const {title, description, comments, category} = request;
 
   return (
 
       <div className={styles.container}>
-        <VoteComponent request={props} />
+        <VoteComponent request={request} requests={requests} setRequests={setRequests} />
 
         <Link
         className={styles.link}
         style={{textDecoration: 'none'}}
         to='/feedback-detail'
-        state={{ feedback: props}}
+        state={{ feedback: request}}
         >
           <div className={styles.cardBody}>
             <div className={styles.content}>

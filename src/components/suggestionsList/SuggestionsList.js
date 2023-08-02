@@ -2,10 +2,10 @@ import styles from './suggestionsList.module.scss';
 
 import {ReactComponent as Empty} from '../../assets/suggestions/illustration-empty.svg';
 import SuggestionCard from '../suggestionCard/SuggestionCard';
+import { useEffect } from 'react';
 
 
-function SuggestionsList({ filteredByTag }) {
-  // Filter only suggestions
+function SuggestionsList({ filteredByTag, requests, setRequests }) {
 
   return (
     <div className={styles.container}>
@@ -23,19 +23,14 @@ function SuggestionsList({ filteredByTag }) {
         // Else display suggestions
       : <div>
           {filteredByTag.map((request, index) => {
-            const {id, title, upvotes, upvoted, status, description, comments, category} = request;
+            {/* const {id, title, upvotes, upvoted, status, description, comments, category} = request; */}
 
             return (
               <SuggestionCard
               key={index}
-              id={id}
-              title={title}
-              upvotes={upvotes}
-              upvoted={upvoted}
-              status={status}
-              description={description}
-              category={category}
-              comments={comments}
+              request={request}
+              requests={requests}
+              setRequests={setRequests}
               />
             )
           })}

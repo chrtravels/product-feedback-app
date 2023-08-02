@@ -1,13 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {ReactComponent as UpArrow} from '../../assets/shared/icon-arrow-up.svg';
 import styles from './voteComponent.module.scss';
 import { upVote } from '../../ApiService';
 
 
-function VoteComponent({ request }) {
+function VoteComponent({ request, requests, setRequests }) {
   const { upvotes, upvoted, id } = request;
   const [hasVoted, setHasVoted] = useState(upvoted)
   const [votes, setVotes] = useState(upvotes);
+  const isMounted = useRef(false);
+
+  const requestsCopy = [...requests];
+  const requestCopy = request;
+  console.log(requestsCopy)
 
   const requestObject = {
     id: id,
@@ -15,11 +20,26 @@ function VoteComponent({ request }) {
     upvoted: hasVoted
   }
 
-  // remove use Effect and put upvote in another function, to be called when setVotes updates
-  // Right now upvotes is being called when the component loads which is unnecessary.
   useEffect(() => {
+    // skip initial render and run when votes has updated
+    if (isMounted.current) {
+      requestCopy.upvotes = votes;
+      requestCopy.upvoted = hasVoted;
+
+      requestsCopy.forEach((item) => {
+        if (item.id === id) {
+        item = requestCopy;
+      }
+    });
+
+    setRequests(requestsCopy);
     upVote(requestObject);
-  }, [votes, hasVoted])
+    } else {
+      isMounted.current = true;
+    }
+
+  }, [votes, hasVoted]);
+
 
   function handleClick () {
     setVotes(hasVoted ? votes - 1 : votes + 1);
