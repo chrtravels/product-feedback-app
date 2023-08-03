@@ -1,11 +1,13 @@
 .container {
   display: flex;
   margin-top: 2rem;
+
+  flex-basis: 32.3%;
+  gap: 1%;
 }
 
 .columnContainer {
-  flex-basis: 32%;
-  gap: 2%;
+  width: 100%;
 
   p {
     margin: 0;

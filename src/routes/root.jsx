@@ -8,7 +8,7 @@ import { getRequests } from '../ApiService';
 
 
 function Root() {
-  // Instead of Querying sidebar, lifting state to root
+  // Lifting state to root & pass to suggestions
   const [requests, setRequests] = useState();
   // State for the Tag component to filter the requests by tag selection
   const [filteredByTag, setFilteredByTag] = useState([]);
