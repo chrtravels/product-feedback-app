@@ -10,7 +10,7 @@ function SuggestionCard({ request, requests, setRequests }) {
   return (
 
       <div className={styles.container}>
-        <VoteComponent request={request} requests={requests} setRequests={setRequests} />
+        <VoteComponent request={request} requests={requests} setRequests={setRequests} cssState='suggestion' />
 
         <Link
         className={styles.link}

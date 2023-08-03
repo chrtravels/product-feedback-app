@@ -18,7 +18,7 @@ function Sidebar({ requests, setRequests, setFilteredByTag }) {
     {/* Displaying the TagsWidget Component */}
     <TagsWidget requests={requests} setFilteredByTag={setFilteredByTag} />
     {/* Displaying the RoadmapWidget Component */}
-    <RoadmapWidget requests={requests} />
+    <RoadmapWidget requests={requests} setRequests={setRequests} />
 
     </div>
   );

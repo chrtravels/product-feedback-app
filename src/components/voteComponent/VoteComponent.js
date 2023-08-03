@@ -4,7 +4,7 @@ import styles from './voteComponent.module.scss';
 import { upVote } from '../../ApiService';
 
 
-function VoteComponent({ request, requests, setRequests }) {
+function VoteComponent({ request, requests, setRequests, cssState }) {
   const { upvotes, upvoted, id } = request;
   const [hasVoted, setHasVoted] = useState(upvoted)
   const [votes, setVotes] = useState(upvotes);
@@ -12,7 +12,6 @@ function VoteComponent({ request, requests, setRequests }) {
 
   const requestsCopy = [...requests];
   const requestCopy = request;
-  console.log(requestsCopy)
 
   const requestObject = {
     id: id,
@@ -40,7 +39,6 @@ function VoteComponent({ request, requests, setRequests }) {
 
   }, [votes, hasVoted]);
 
-
   function handleClick () {
     setVotes(hasVoted ? votes - 1 : votes + 1);
     setHasVoted(hasVoted ? false : true);
@@ -49,7 +47,7 @@ function VoteComponent({ request, requests, setRequests }) {
 
 
   return (
-    <div className={`${styles.container} tag-vote`} onClick={handleClick}>
+    <div className={cssState === 'suggestion' ? `${styles.suggestionVoteContainer} tag-vote` : `${styles.roadmapVoteContainer} tag-vote`} onClick={handleClick}>
     <UpArrow />
     <h4>{votes}</h4>
   </div>

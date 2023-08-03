@@ -3,12 +3,13 @@ import styles from  './roadmapCard.module.scss';
 import {ReactComponent as CommentsIcon} from '../../assets/shared/icon-comments.svg';
 import {ReactComponent as UpArrow} from '../../assets/shared/icon-arrow-up.svg';
 import { Link } from 'react-router-dom';
+import VoteComponent from '../voteComponent/VoteComponent';
 
-function RoadmapCard({item}) {
+function RoadmapCard({ item, requests, setRequests }) {
   const {title, upvotes, status, description, category, comments} = item;
   const caseCorrectedStatus = status[0].toUpperCase() + status.slice(1);
   const caseCorrectedCategory = category[0].toUpperCase() + category.slice(1);
-
+  // console.log(requests)
   // Come back and add comment count
 
   return (
@@ -34,10 +35,7 @@ function RoadmapCard({item}) {
             <div className={`${styles.tagContainer} tag-vote`}>
               <span className='tag'>{caseCorrectedCategory}</span>
             </div>
-            <div className={`${styles.voteCount} tag-vote`}>
-              <UpArrow />
-              <h4>{upvotes}</h4>
-            </div>
+              <VoteComponent className={styles.voteCount} request={item} requests={requests} setRequests={setRequests} cssState='roadmap' />
           </div>
           <div className={styles.commentCount}>
             <CommentsIcon />

@@ -12,7 +12,6 @@ function RoadmapWidget({ requests }) {
 
 
   useEffect(() => {
-    const tempSuggestions = [];
     let planned = 0;
     let inProgress = 0;
     let live = 0;
@@ -22,28 +21,21 @@ function RoadmapWidget({ requests }) {
       requests.forEach((el) => {
         const status = el.status;
 
-        if (status !== 'suggestion') {
-          tempSuggestions.push(el);
-
-          if (status === 'planned') {
-            planned += 1;
-          } else  if (status === 'in-progress') {
-            inProgress += 1;
-          } else  if (status === 'live') {
-            live += 1;
-          }
+        if (status === 'planned') {
+          planned += 1;
+        } else  if (status === 'in-progress') {
+          inProgress += 1;
+        } else  if (status === 'live') {
+          live += 1;
         }
       });
 
-      setRoadmapSuggestions(tempSuggestions);
       setPlannedCount(planned)
       setInProgressCount(inProgress)
       setLiveCount(live)
     }
 
   }, [requests])
-
-  // console.log('roadmap suggestions ', roadmapSuggestions);
 
 
   return (
@@ -52,7 +44,6 @@ function RoadmapWidget({ requests }) {
           <h3 className='dark-font'>Roadmap</h3>
           <Link
           to="/roadmap"
-          state={{ suggestions: roadmapSuggestions }}
           >
             <span className='body-2'>View</span>
           </Link>

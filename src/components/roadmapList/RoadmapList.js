@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './roadmapList.module.scss';
 import RoadmapCard from '../roadmapCard/RoadmapCard';
 
-function RoadmapList({suggestions}) {
+function RoadmapList({ requests, setRequests}) {
   const [planned, setPlanned] = useState([]);
   const [inProgress, setInProgress] = useState([]);
   const [live, setLive] = useState([]);
@@ -12,14 +12,16 @@ function RoadmapList({suggestions}) {
     const tempInProgress = [];
     const tempLive = [];
 
-    suggestions.forEach((suggestion) => {
-      const status = suggestion.status;
+    requests.forEach((request) => {
+      const status = request.status;
 
       if (status === 'planned') {
-        tempPlanned.push(suggestion);
+        tempPlanned.push(request);
       } else if (status === 'in-progress') {
-        tempInProgress.push(suggestion);
-      } else tempLive.push(suggestion);
+        tempInProgress.push(request);
+      } else if (status === 'live') {
+        tempLive.push(request);
+      }
     })
 
     setPlanned(tempPlanned);
@@ -27,7 +29,7 @@ function RoadmapList({suggestions}) {
     setLive(tempLive);
 
 
-  }, [])
+  }, [setRequests])
 
   return (
     <div className={styles.container}>
@@ -38,7 +40,7 @@ function RoadmapList({suggestions}) {
         </div>
         <div className={styles.cards}>
           {planned.map((item) => {
-           return <RoadmapCard item={item}/>
+           return <RoadmapCard key={item.id} item={item} requests={requests} setRequests={setRequests} />
           })}
         </div>
       </div>
@@ -50,7 +52,7 @@ function RoadmapList({suggestions}) {
         </div>
         <div className={styles.cards}>
           {inProgress.map((item) => {
-           return <RoadmapCard item={item}/>
+           return <RoadmapCard key={item.id} item={item} requests={requests} setRequests={setRequests} />
           })}
         </div>
       </div>
@@ -62,7 +64,7 @@ function RoadmapList({suggestions}) {
         </div>
         <div className={styles.cards}>
           {live.map((item) => {
-           return <RoadmapCard item={item}/>
+           return <RoadmapCard key={item.id} item={item} requests={requests} setRequests={setRequests} />
           })}
         </div>
       </div>
