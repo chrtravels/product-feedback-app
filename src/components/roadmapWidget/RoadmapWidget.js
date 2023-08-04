@@ -43,6 +43,7 @@ function RoadmapWidget({ requests }) {
         <div className={styles.header}>
           <h3 className='dark-font'>Roadmap</h3>
           <Link
+          className={styles.link}
           to="/roadmap"
           >
             <span className='body-2'>View</span>

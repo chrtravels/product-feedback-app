@@ -1,11 +1,12 @@
 @import '../../global.scss';
 
 .container {
-  width: 215px;
-  display: flex;
+  position: relative;
+  width: auto;
+  display: inline-flex;
   flex-flow: row wrap;
   background-color: white;
-  margin: 1rem 1rem 0 0;
+  margin: 1rem 0 .5rem 0;
   padding: 1.5rem 1rem .5rem 1.3rem;
   border-radius: 10px;
   cursor: pointer;

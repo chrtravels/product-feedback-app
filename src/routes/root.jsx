@@ -20,16 +20,19 @@ function Root() {
 
   return (
     <div className={styles.container}>
-     <Sidebar
-      className={styles.sidebar}
-      requests={requests}
-      setRequests={setRequests}
-      setFilteredByTag={setFilteredByTag}
-    />
+      <div className={styles.body}>
+        <div className={styles.sidebar}>
+          <Sidebar
+          requests={requests}
+          setRequests={setRequests}
+          setFilteredByTag={setFilteredByTag}
+          />
+        </div>
 
-     <div className={styles.content}>
-      <SuggestionsLayout filteredByTag={filteredByTag} requests={requests} setRequests={setRequests} />
-     </div>
+        <div className={styles.content}>
+          <SuggestionsLayout filteredByTag={filteredByTag} requests={requests} setRequests={setRequests} />
+        </div>
+      </div>
     </div>
   );
 }

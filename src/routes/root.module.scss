@@ -1,15 +1,22 @@
 .container {
+  width: 100vw;
   display: flex;
   justify-content: center;
   margin-top: 5rem;
+}
+
+.body {
+  width: 70vw;
+  display: flex;
+  justify-content: center;
   gap: 2%;
 }
 
 .sidebar {
-  flex-basis: 20%;
+  flex-basis: 15%;
 }
 
 .content {
   height: 100vh;
-  flex-basis: 60%;
+  flex-basis: 83%;
 }
