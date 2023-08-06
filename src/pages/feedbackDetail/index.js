@@ -1,4 +1,6 @@
 import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { RequestContext } from '../../context/requestsContext';
 import SuggestionCard from '../../components/suggestionCard/SuggestionCard';
 import styles from './feedbackDetail.module.scss';
 import FeedbackList from '../../components/feedbackList/FeedbackList';
@@ -6,12 +8,13 @@ import FeedbackList from '../../components/feedbackList/FeedbackList';
 import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.svg';
 import AddComment from '../../components/addComment/AddComment';
 
+
 function FeedbackDetail() {
+  const navigate = useNavigate();
   const location = useLocation();
   const { feedback } = location.state;
-  const navigate = useNavigate();
-
   const {id, comments } = feedback;
+  const { requests, setRequests } = useContext(RequestContext)
 
   return (
     <div className={styles.container}>
@@ -40,6 +43,9 @@ function FeedbackDetail() {
         <SuggestionCard
         id={id}
         request={feedback}
+        requests={requests}
+        setRequests={setRequests}
+        cssState='suggestion'
         />
 
         <FeedbackList comments={comments}/>
