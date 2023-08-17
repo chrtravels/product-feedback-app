@@ -23,7 +23,6 @@ function CommentCard({comments, comment}) {
     }
   }, [comments, comment]);
 
-
   let imageName = image.slice(image.lastIndexOf('/'));
 
 
@@ -57,7 +56,7 @@ function CommentCard({comments, comment}) {
             })}
 
             {showPostReply &&
-              <CommentReply />
+              <CommentReply currentComment={currentComment} />
             }
           </div>
 

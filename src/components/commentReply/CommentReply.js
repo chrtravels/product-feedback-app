@@ -1,15 +1,33 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './commentReply.module.scss';
+import { addComment } from '../../ApiService';
 
-function CommentReply() {
+function CommentReply({ currentComment }) {
   const [reply, setReply] = useState('');
 
+  const { id, request_id, username } = currentComment;
+
+  const [state, setState] = useState({
+    request_id: request_id,
+    comment_id: id,
+    content: reply,
+    username: 'velvetround',
+    name: 'Zena Kelley',
+    image: './assets/user-images/image-zena.jpg',
+    replying_to: username
+  })
+
   const onChange = e => {
+    setState((state) => ({
+      ...state, content: e.target.value
+    }))
     setReply(e.target.value)
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    addComment(state);
+    window.location.reload();
   }
 
   return (
