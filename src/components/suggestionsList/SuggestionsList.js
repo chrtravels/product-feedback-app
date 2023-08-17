@@ -2,7 +2,6 @@ import styles from './suggestionsList.module.scss';
 
 import {ReactComponent as Empty} from '../../assets/suggestions/illustration-empty.svg';
 import SuggestionCard from '../suggestionCard/SuggestionCard';
-import { useEffect } from 'react';
 
 
 function SuggestionsList({ filteredByTag, requests, setRequests }) {

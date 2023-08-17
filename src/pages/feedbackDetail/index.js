@@ -1,5 +1,5 @@
 import { useLocation, Link, useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { RequestContext } from '../../context/requestsContext';
 import SuggestionCard from '../../components/suggestionCard/SuggestionCard';
 import styles from './feedbackDetail.module.scss';
@@ -13,8 +13,22 @@ function FeedbackDetail() {
   const navigate = useNavigate();
   const location = useLocation();
   const { feedback } = location.state;
-  const {id, comments } = feedback;
+  const [comments, setComments] = useState(feedback.comments);
+  const id = feedback.id;
+  const isMounted = useRef(false);
   const { requests, setRequests } = useContext(RequestContext)
+
+
+  useEffect(() => {
+    if (isMounted.current) {
+      requests.forEach((el) => {
+        if (id === el.id) setComments([...el.comments])
+      })
+    } else {
+      isMounted.current = true;
+    }
+  }, [requests, setRequests, setComments ])
+
 
   return (
     <div className={styles.container}>
@@ -50,7 +64,7 @@ function FeedbackDetail() {
 
         <FeedbackList comments={comments}/>
 
-        <AddComment feedbackId={id}/>
+        <AddComment feedbackId={id} requests={requests} setRequests={setRequests} />
       </div>
 
     </div>

@@ -68,13 +68,14 @@ export const updateRequest = async (request) => {
   }
 }
 
-export const addComment = async () => {
+export const addComment = async (comment) => {
   const options = {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-    }
+    },
+    body: JSON.stringify(comment)
   };
 
   try {

@@ -1,6 +1,6 @@
 const Koa = require('koa');
 const app = new Koa();
-const cors = require('koa-cors');
+const cors = require('@koa/cors');
 const router = require('./router');
 const bodyParser = require('koa-bodyparser');
 const { HOST } = require('./config')
@@ -11,7 +11,7 @@ app.use(bodyParser());
 
 // const origin = 'http://localhost:4200';
 
-// app.use(cors({origin: 'http://127.0.0.1:4200/'}));
+// app.use(cors({origin: '*'}));
 app.use(cors());
 app.use(router.routes());
 

@@ -6,7 +6,6 @@ import VoteComponent from '../voteComponent/VoteComponent';
 
 function SuggestionCard({ request, requests, setRequests }) {
   const {title, description, comments, category} = request;
-  // console.log('requests:', requests)
 
   return (
 
@@ -17,8 +16,7 @@ function SuggestionCard({ request, requests, setRequests }) {
         className={styles.link}
         style={{textDecoration: 'none'}}
         to='/feedback-detail'
-        state={{ feedback: request, requests: requests }}
-        data={{ setRequests: setRequests }}
+        state={{ feedback: request }}
         >
           <div className={styles.cardBody}>
             <div className={styles.content}>

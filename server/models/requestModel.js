@@ -32,9 +32,9 @@ exports.deleteRequest = (request) => {
   return pool.query(sql, value);
 }
 
-exports.postComment = comment => {
-  const sql = 'INSERT INTO comments (request_id, comment_id, content, username, name, replying_to) VALUES ($1, $2, $3, $4, $5, $6)';
-  const values = [comment.id, comment.comment_id, comment.content, comment.username, comment.name, comment.replying_to];
+exports.postComment = (comment) => {
+  const sql = 'INSERT INTO comments (request_id, comment_id, content, username, name, image, replying_to) VALUES ($1, $2, $3, $4, $5, $6, $7)';
+  const values = [comment.request_id, comment.comment_id, comment.content, comment.username, comment.name, comment.image, comment.replying_to];
   return pool.query(sql, values);
 }
 
