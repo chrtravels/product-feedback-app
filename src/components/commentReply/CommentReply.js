@@ -1,16 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './commentReply.module.scss';
 import { addComment } from '../../ApiService';
 
 function CommentReply({ currentComment }) {
-  const [reply, setReply] = useState('');
-
   const { id, request_id, username } = currentComment;
 
   const [state, setState] = useState({
     request_id: request_id,
     comment_id: id,
-    content: reply,
+    content: '',
     username: 'velvetround',
     name: 'Zena Kelley',
     image: './assets/user-images/image-zena.jpg',
@@ -21,7 +19,6 @@ function CommentReply({ currentComment }) {
     setState((state) => ({
       ...state, content: e.target.value
     }))
-    setReply(e.target.value)
   }
 
   const handleSubmit = (event) => {
@@ -38,7 +35,7 @@ function CommentReply({ currentComment }) {
             className='body-2'
             name='detail'
             rows='4'
-            value={reply}
+            value={state.content}
             placeholder='Type your comment here'
             onChange={onChange}
           />
