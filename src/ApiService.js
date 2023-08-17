@@ -51,7 +51,7 @@ export const deleteFeedback = async (feedback) => {
 
 export const updateRequest = async (request) => {
   const options = {
-    method: 'POST',
+    method: 'PATCH',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ export const updateRequest = async (request) => {
   };
 
   try {
-    const response = await fetch(URL +  `/edit-feedback/${request.id}/update`, options);
+    const response = await fetch(URL +  `/edit-feedback`, options);
     const data = response.json();
     return data;
   } catch (error) {

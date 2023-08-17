@@ -17,6 +17,15 @@ exports.addRequest = async ctx => {
   }
 }
 
+exports.editRequest = async ctx => {
+  try {
+    await requestModel.editRequest(ctx.request.body);
+    ctx.status = 201;
+  } catch (error) {
+    ctx.throw(500, error);
+  }
+}
+
 exports.deleteRequest = async ctx => {
   try {
     await requestModel.deleteRequest(ctx.request.body);

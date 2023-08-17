@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.svg';
 import {ReactComponent as EditIcon} from '../../assets/shared/icon-edit-feedback.svg';
 import { useState } from 'react';
-import { deleteFeedback } from '../../ApiService';
+import { deleteFeedback, updateRequest } from '../../ApiService';
 
 
 
@@ -16,6 +16,7 @@ function EditFeedback() {
   const {id, title, category, status, description} = feedback;
 
   const [state, setState] = useState({
+    id: id,
     title: title,
     category: category,
     status: status,
@@ -23,8 +24,9 @@ function EditFeedback() {
   })
 
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
+    updateRequest(state);
+    navigate('/');
   }
 
   const handleDelete = (event) => {
@@ -32,6 +34,7 @@ function EditFeedback() {
     deleteFeedback(feedback);
     navigate('/');
   }
+
 
   return (
     <div className={styles.container}>
@@ -147,7 +150,7 @@ function EditFeedback() {
                   >
                     <button className='button button-cancel'>Cancel</button>
                   </Link>
-                    <button className='button button-primary'>Add Feedback</button>
+                    <button className='button button-primary' onClick={handleSubmit}>Add Feedback</button>
                   </div>
                 </div>
 

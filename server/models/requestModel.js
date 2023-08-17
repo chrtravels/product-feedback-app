@@ -26,9 +26,16 @@ exports.postRequest = (request) => {
   return pool.query(sql, values);
 }
 
+exports.editRequest = (request) => {
+  const {id, title, status, description, category} = request;
+  const sql = 'UPDATE product_requests SET title = $1, status = $2, description = $3, category = $4 WHERE id = $5';
+  const values = [title, status, description, category, id];
+  return pool.query(sql, values);
+}
+
 exports.deleteRequest = (request) => {
   const sql = 'DELETE FROM product_requests WHERE id = $1';
-  const value = [request.id];
+  const value = [request.id]
   return pool.query(sql, value);
 }
 
