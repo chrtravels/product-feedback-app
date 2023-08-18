@@ -1,16 +1,19 @@
 import styles from './newFeedback.module.scss';
 
 import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.svg';
-import {ReactComponent as plusIcon} from '../../assets/shared/icon-plus.svg';
-import { useState } from 'react';
-import { addRequest } from '../../ApiService';
 
+import { addRequest } from '../../ApiService';
+import DropdownList from '../../components/dropdownList/DropdownList';
 
 
 function NewFeedback() {
   const navigate = useNavigate();
+
+  const categoryOptions = ['Feature','UI', 'UX', 'Enhancement', 'Bug'];
+  const [selectedOption, setSelectedOption] = useState(categoryOptions[0]);
 
   const [state, setState] = useState({
     title: '',
@@ -20,6 +23,7 @@ function NewFeedback() {
     category: 'feature',
     upvoted: false
   })
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -40,8 +44,7 @@ function NewFeedback() {
         <div className={styles.cardBody}>
           <div className={styles.plusCircle}>
             <div className={styles.plusContainer}>
-              <plusIcon className={styles.plusIcon}/>
-              <svg overflow="visible" width="9" height="9" xmlns="http://www.w3.org/2000/svg"><text transform="translate(-24 -20)" fill="#F2F4FE" fill-rule="evenodd" font-family="Jost-Bold, Jost" font-size="32" font-weight="bold"><tspan x="24" y="27.5">+</tspan></text></svg>
+              <svg overflow="visible" width="9" height="9" xmlns="http://www.w3.org/2000/svg"><text transform="translate(-24 -20)" fill="#F2F4FE" fillRule="evenodd" fontFamily="Jost-Bold, Jost" fontSize="32" fontWeight="bold"><tspan x="24" y="27.5">+</tspan></text></svg>
             </div>
           </div>
 
@@ -67,13 +70,15 @@ function NewFeedback() {
                 </div>
 
                 <div className={styles.formRow}>
-                  <h4 className='dark-font'>Category</h4>
+                  <h4 className='dark-font' id='categoryLabel'>Category</h4>
                   <p className='light-font body-3'>
                     Choose a category for your feedback
                   </p>
                   <select
                   id='category'
                   name='category'
+                  className='nativeSelect'
+                  aria-labelledby='categoryLabel'
                   value={state.category}
                   onChange={(e) => setState((state) => ({
                       ...state, [e.target.id]: e.target.value
@@ -84,6 +89,16 @@ function NewFeedback() {
                     <option value="enhancement">Enhancement</option>
                     <option value="bug">Bug</option>
                   </select>
+
+                  <DropdownList
+                    options={categoryOptions}
+                    selectedOption={selectedOption}
+                    setSelectedOption={setSelectedOption}
+                    currentFieldName={'Category'}
+                    state={state}
+                    setState={setState}
+                  />
+
                 </div>
 
                 <div className={styles.formRow}>

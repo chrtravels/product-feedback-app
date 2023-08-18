@@ -72,8 +72,10 @@
 }
 
 .formRow {
+  position: relative;
+
   input, select, option, textarea {
-    width: 100%;
+    width: 95.5%;
     height: 2.5rem;
     padding-left: 1rem;
     color: $dark-font;
@@ -83,17 +85,17 @@
     cursor: pointer;
   }
 
+  input:hover, textarea:hover {
+    border: 2px solid #5d74e9;
+    margin: -2px;
+  }
+
   select {
-  //   margin: 0;
-  // -webkit-box-sizing: border-box;
-  // -moz-box-sizing: border-box;
-  // box-sizing: border-box;
-  // -webkit-appearance: none;
-  // -moz-appearance: none;
+    position: relative;
   }
 
   textarea {
-    height: 6rem;
+    height: 5rem;
     resize: none;
   }
 
