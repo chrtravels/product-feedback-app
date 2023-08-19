@@ -6,6 +6,7 @@ import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.s
 import {ReactComponent as EditIcon} from '../../assets/shared/icon-edit-feedback.svg';
 import { useState } from 'react';
 import { deleteFeedback, updateRequest } from '../../ApiService';
+import DropdownList from '../../components/dropdownList/DropdownList';
 
 
 
@@ -14,6 +15,11 @@ function EditFeedback() {
   const { feedback } = location.state;
   const navigate = useNavigate();
   const {id, title, category, status, description} = feedback;
+  const categoryOptions = ['Feature','UI', 'UX', 'Enhancement', 'Bug'];
+  const [selectedOption, setSelectedOption] = useState(category);
+  const statusOptions = ['Suggestion', 'Planned', 'In-Progress', 'Live'];
+  const [selectedStatus, setSelectedStatus] = useState(status);
+
 
   const [state, setState] = useState({
     id: id,
@@ -97,6 +103,15 @@ function EditFeedback() {
                     <option value="enhancement">Enhancement</option>
                     <option value="bug">Bug</option>
                   </select>
+
+                  <DropdownList
+                    options={categoryOptions}
+                    selectedOption={selectedOption}
+                    setSelectedOption={setSelectedOption}
+                    currentFieldName={'Category'}
+                    state={state}
+                    setState={setState}
+                  />
                 </div>
 
                 <div className={styles.formRow}>
@@ -117,6 +132,15 @@ function EditFeedback() {
                     <option value="in-progress">In-Progress</option>
                     <option value="live">Live</option>
                   </select>
+
+                  <DropdownList
+                    options={statusOptions}
+                    selectedOption={selectedStatus}
+                    setSelectedOption={setSelectedStatus}
+                    currentFieldName={'Update Status'}
+                    state={state}
+                    setState={setState}
+                  />
                 </div>
 
                 <div className={styles.formRow}>

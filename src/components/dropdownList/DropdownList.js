@@ -26,12 +26,12 @@ function DropdownList({options, selectedOption, setSelectedOption, currentFieldN
   return (
     <div className='customSelect drop-down' aria-hidden='true' onClick={handleCategoryDropdown}>
       <div className='customSelectTrigger'>
-        <span>{selectedOption}</span>
+        <span>{selectedOption.slice(0,1).toUpperCase()}{selectedOption.slice(1)}</span>
         <DownArrow />
       </div>
       <div className={`customSelectOptions ${showDropdown ? 'customSelectHidden' : ''}`}>
         {options.map((option, index) => {
-          if (option === selectedOption) {
+          if (option.toLowerCase() === selectedOption.toLowerCase()) {
             return <div key={index} className='customSelectOption'> <span>{option}</span> <Checkmark /> </div>
           } else {
             return <div key={index} className='customSelectOption' data-value={option} onClick={handleSelect}>{option}</div>
