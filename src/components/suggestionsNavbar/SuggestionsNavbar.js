@@ -1,13 +1,24 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import styles from './suggestionsNavbar.module.scss';
 
 import {ReactComponent as SuggestionsIcon} from '../../assets/suggestions/icon-suggestions.svg';
 import {ReactComponent as LeftArrow} from '../../assets/shared/icon-arrow-left.svg';
+import SortListDropdown from '../sortListDropdown/SortListDropdown';
 
-function SuggestionsNavbar() {
+function SuggestionsNavbar({requests, setRequests}) {
   const location = useLocation();
   const path = location.pathname;
   const navigate = useNavigate();
+
+  const sortByOptions = ['Most Upvotes', 'Least Upvotes', 'Most Comments', 'Least Comments'];
+  const [selectedOption, setSelectedOption] = useState(sortByOptions[0]);
+
+  console.log(requests)
+
+  useEffect(() => {
+
+  })
 
   return (
     <div className={styles.container}>
@@ -19,6 +30,11 @@ function SuggestionsNavbar() {
                 <SuggestionsIcon />
                 <h3># Suggestions</h3>
                 <span id={styles.sort}>Sort by :</span>
+                <SortListDropdown
+                  options={sortByOptions}
+                  selectedOption={selectedOption}
+                  setSelectedOption={setSelectedOption}
+                />
               </div>
             </div>
 

@@ -27,7 +27,7 @@ function DropdownList({options, selectedOption, setSelectedOption, currentFieldN
     <div className='customSelect drop-down' aria-hidden='true' onClick={handleCategoryDropdown}>
       <div className='customSelectTrigger'>
         <span>{selectedOption.slice(0,1).toUpperCase()}{selectedOption.slice(1)}</span>
-        <DownArrow />
+        <DownArrow stroke='#4661E6' />
       </div>
       <div className={`customSelectOptions ${showDropdown ? 'customSelectHidden' : ''}`}>
         {options.map((option, index) => {

@@ -8,7 +8,7 @@ function SuggestionsLayout({ filteredByTag, requests, setRequests }) {
 
   return (
     <div className={styles.container}>
-      <SuggestionsNavbar />
+      <SuggestionsNavbar requests={requests} setRequests={setRequests} />
 
       <SuggestionsList filteredByTag={filteredByTag} requests={requests} setRequests={setRequests} />
     </div>

@@ -48,7 +48,7 @@ function VoteComponent({ request, requests, setRequests, cssState }) {
 
   return (
     <div className={cssState === 'suggestion' ? `${styles.suggestionVoteContainer} tag-vote` : `${styles.roadmapVoteContainer} tag-vote`} onClick={handleClick}>
-    <UpArrow />
+    <UpArrow stroke='#4661E6' />
     <h4>{votes}</h4>
   </div>
   );
