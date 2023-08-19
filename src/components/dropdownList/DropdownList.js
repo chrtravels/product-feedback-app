@@ -3,6 +3,7 @@ import styles from './dropdownList.module.scss';
 import { useState } from 'react';
 
 import {ReactComponent as DownArrow} from '../../assets/shared/icon-arrow-down.svg';
+import {ReactComponent as UpArrow} from '../../assets/shared/icon-arrow-up.svg';
 import {ReactComponent as Checkmark} from '../../assets/shared/icon-check.svg';
 
 function DropdownList({options, selectedOption, setSelectedOption, currentFieldName, state, setState}) {
@@ -27,7 +28,7 @@ function DropdownList({options, selectedOption, setSelectedOption, currentFieldN
     <div className='customSelect drop-down' aria-hidden='true' onClick={handleCategoryDropdown}>
       <div className='customSelectTrigger'>
         <span>{selectedOption.slice(0,1).toUpperCase()}{selectedOption.slice(1)}</span>
-        <DownArrow stroke='#4661E6' />
+        {showDropdown ? <UpArrow stroke='#4661E6' /> : <DownArrow stroke='#4661E6' /> }
       </div>
       <div className={`customSelectOptions ${showDropdown ? 'customSelectHidden' : ''}`}>
         {options.map((option, index) => {
