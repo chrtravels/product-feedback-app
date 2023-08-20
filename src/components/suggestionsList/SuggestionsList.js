@@ -4,7 +4,7 @@ import {ReactComponent as Empty} from '../../assets/suggestions/illustration-emp
 import SuggestionCard from '../suggestionCard/SuggestionCard';
 
 
-function SuggestionsList({ filteredByTag, requests, setRequests }) {
+function SuggestionsList({ filteredByTag, setFilteredByTag }) {
 
   return (
     <div className={styles.container}>
@@ -22,14 +22,12 @@ function SuggestionsList({ filteredByTag, requests, setRequests }) {
         // Else display suggestions
       : <div>
           {filteredByTag.map((request, index) => {
-            {/* const {id, title, upvotes, upvoted, status, description, comments, category} = request; */}
-
             return (
               <SuggestionCard
               key={index}
               request={request}
-              requests={requests}
-              setRequests={setRequests}
+              requests={filteredByTag}
+              setRequests={setFilteredByTag}
               />
             )
           })}

@@ -31,7 +31,7 @@ function SortListDropdown({options, selectedOption, setSelectedOption}) {
       <div className={`${styles.optionsContainer} customSelectOptions ${showDropdown ? 'customSelectHidden' : ''}`}>
         {options.map((option, index) => {
           if (option.toLowerCase() === selectedOption.toLowerCase()) {
-            return <div key={index} className={`${styles.option} customSelectOption`}> <span>{option}</span> <Checkmark /> </div>
+            return <div key={index} className={`${styles.option} customSelectOption`} data-value={option}> <span>{option}</span> <Checkmark /> </div>
           } else {
             return <div key={index} className='customSelectOption' data-value={option} onClick={handleSelect}>{option}</div>
           }
