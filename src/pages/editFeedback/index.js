@@ -9,7 +9,6 @@ import { deleteFeedback, updateRequest } from '../../ApiService';
 import DropdownList from '../../components/dropdownList/DropdownList';
 
 
-
 function EditFeedback() {
   const location = useLocation();
   const { feedback } = location.state;
