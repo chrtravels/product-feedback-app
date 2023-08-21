@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/product-feedback-app/static/css/main.d78f4e7b.css",
+    "main.js": "/product-feedback-app/static/js/main.f873d0f3.js",
+    "static/media/background-header.png": "/product-feedback-app/static/media/background-header.bc782ba03942f8efd767.png",
+    "static/media/illustration-empty.svg": "/product-feedback-app/static/media/illustration-empty.6ed5b35a7fb831ed20ca5350bc0cbd84.svg",
+    "static/media/icon-suggestions.svg": "/product-feedback-app/static/media/icon-suggestions.2709beff19f3deb4adab5cb39341e2f5.svg",
+    "static/media/icon-edit-feedback.svg": "/product-feedback-app/static/media/icon-edit-feedback.4aeb5f4615fe33277ae49fefc668dbf7.svg",
+    "index.html": "/product-feedback-app/index.html",
+    "static/media/icon-comments.svg": "/product-feedback-app/static/media/icon-comments.aa41e0afa583af30d09d8f817d978908.svg",
+    "static/media/icon-arrow-down.svg": "/product-feedback-app/static/media/icon-arrow-down.76f593efae16315658ea28bebdbddc5c.svg",
+    "static/media/icon-arrow-left.svg": "/product-feedback-app/static/media/icon-arrow-left.82c72a96c09d34d703023ee13913ec11.svg",
+    "static/media/icon-arrow-up.svg": "/product-feedback-app/static/media/icon-arrow-up.3bd5636dcf1f13d22cb2f36ce880486e.svg",
+    "static/media/icon-check.svg": "/product-feedback-app/static/media/icon-check.121f050674ec6d7b94e2f2510cd50616.svg",
+    "main.d78f4e7b.css.map": "/product-feedback-app/static/css/main.d78f4e7b.css.map",
+    "main.f873d0f3.js.map": "/product-feedback-app/static/js/main.f873d0f3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d78f4e7b.css",
+    "static/js/main.f873d0f3.js"
+  ]
+}
