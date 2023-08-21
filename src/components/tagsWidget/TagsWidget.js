@@ -1,15 +1,12 @@
 import styles from './tagsWidget.module.scss';
 
 import { useEffect, useState } from 'react';
-import { getRequests } from '../../ApiService';
 
 
 function TagsWidget({ requests, setFilteredByTag}) {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [allIsActive, setAllIsActive] = useState(true);
-  // const [categoryIsActive, setCategoryIsActive] = useState(false);
-  // const [selectedSuggestions, setSelectedSuggestions] = useState([]);
 
   useEffect(() => {
 
