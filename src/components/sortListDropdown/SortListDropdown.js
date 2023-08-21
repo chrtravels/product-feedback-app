@@ -21,7 +21,6 @@ function SortListDropdown({options, selectedOption, setSelectedOption}) {
     setSelectedOption(value);
   }
 
-
   return (
     <div className={`${styles.sortListDropdown} customSelect`} aria-hidden='true' onClick={handleCategoryDropdown}>
       <div className={`${styles.triggerContainer} customSelectTrigger`}>

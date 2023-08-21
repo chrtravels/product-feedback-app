@@ -4,7 +4,6 @@ import RoadmapWidget from '../../components/roadmapWidget/RoadmapWidget';
 
 function Sidebar({ requests, setRequests, setFilteredByTag }) {
 
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>

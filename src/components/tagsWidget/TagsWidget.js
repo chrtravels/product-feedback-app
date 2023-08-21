@@ -33,7 +33,7 @@ function TagsWidget({ requests, setFilteredByTag}) {
         }
       });
 
-      setFilteredByTag(tempSuggestions);
+      setFilteredByTag([...tempSuggestions.sort((votes1, votes2) => (votes1.upvotes < votes2.upvotes) ? 1 : (votes1.upvotes > votes2.upvotes) ? -1 : 0)]);
       setCategories(tempCategories);
     }
 

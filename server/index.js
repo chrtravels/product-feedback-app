@@ -9,17 +9,9 @@ const { PORT } = require('./config');
 
 app.use(bodyParser());
 
-// const origin = 'http://localhost:4200';
-
 // app.use(cors({origin: '*'}));
 app.use(cors());
 app.use(router.routes());
-
-// app.use(async (ctx, next) => {
-//   ctx.set('Access-Control-Allow-Origin', '*');
-//   ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-//   await next();
-// });
 
 app.use(async ctx => {
   ctx.body = 'Hello World';

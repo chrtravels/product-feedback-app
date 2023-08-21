@@ -14,6 +14,7 @@ function SuggestionsNavbar({filteredByTag, setFilteredByTag}) {
   const sortByOptions = ['Most Upvotes', 'Least Upvotes', 'Most Comments', 'Least Comments'];
   const [selectedOption, setSelectedOption] = useState(sortByOptions[0]);
 
+
   useEffect(() => {
 
     if (filteredByTag) {

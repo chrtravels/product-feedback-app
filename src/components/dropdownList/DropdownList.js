@@ -1,5 +1,3 @@
-import styles from './dropdownList.module.scss';
-
 import { useState } from 'react';
 
 import {ReactComponent as DownArrow} from '../../assets/shared/icon-arrow-down.svg';
