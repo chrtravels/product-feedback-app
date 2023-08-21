@@ -88,7 +88,6 @@ export const addComment = async (comment) => {
 }
 
 export const upVote = async (request) => {
-  // console.log(request)
   const options = {
     method: 'PUT',
     headers: {
