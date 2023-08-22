@@ -1,12 +1,11 @@
 import styles from  './roadmapCard.module.scss';
 
 import {ReactComponent as CommentsIcon} from '../../assets/shared/icon-comments.svg';
-import {ReactComponent as UpArrow} from '../../assets/shared/icon-arrow-up.svg';
 import { Link } from 'react-router-dom';
 import VoteComponent from '../voteComponent/VoteComponent';
 
 function RoadmapCard({ item, requests, setRequests }) {
-  const {title, upvotes, status, description, category, comments} = item;
+  const {title, status, description, category, comments} = item;
   const caseCorrectedStatus = status[0].toUpperCase() + status.slice(1);
   const caseCorrectedCategory = category[0].toUpperCase() + category.slice(1);
   // console.log(requests)

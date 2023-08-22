@@ -8,7 +8,7 @@ function CommentCard({comments, comment}) {
   const [hasReplies, setHasReplies] = useState(false);
   const [showPostReply, setShowPostReply] = useState(false);
   // const [isReply, setIsReply] = useState(false);
-  const {id, request_id, comment_id, content, image, name, username, replying_to} = currentComment;
+  const {id, content, image, name, username, replying_to} = currentComment;
 
   useEffect(() => {
     setCurrentComments(comments)
@@ -52,7 +52,7 @@ function CommentCard({comments, comment}) {
                 return (
                   <CommentCard key={i} comment={comment} comments={comments}/>
                 )
-              }
+              } else return '';
             })}
 
             {showPostReply &&

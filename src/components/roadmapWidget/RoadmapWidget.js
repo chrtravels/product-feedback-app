@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 function RoadmapWidget({ requests }) {
-  const [roadmapSuggestions, setRoadmapSuggestions] = useState([]);
   const [plannedCount, setPlannedCount] = useState(0);
   const [inProgressCount, setInProgressCount] = useState(0)
   const [liveCount, setLiveCount] = useState(0);

@@ -18,7 +18,7 @@ function FeedbackList({comments}) {
             return (
               <CommentCard key={i} comments={comments} comment={comment} />
             )
-          }
+          } else return '';
         })}
       </div>
     </div>
