@@ -7,6 +7,11 @@
   border-radius: 6px;
 }
 
+.container:not(:first-child) {
+  margin-top: 1.2rem;
+}
+
+
 .colorBar {
   height: 6px;
   border-top-left-radius: 6px;
@@ -75,6 +80,22 @@
   }
 }
 
-#commentCount {
+@media (max-width: 956px) {
+  .container:not(:first-child) {
+    margin-top: 1rem;
+  }
 
+  .cardContainer {
+    padding: 1.3rem 1rem 1.7rem 1.2rem;
+  }
+
+  .bodyContainer {
+    h3 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
 }

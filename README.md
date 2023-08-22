@@ -64,7 +64,7 @@ and replies.
 [+] Frontend - React
 [+] Backend - Node.js with KOA
 [+] Database - PostgreSQL hosted on https://railway.app/
-[+] CSS - a global CSS file, with SASS CSS modules for page/component specific CSS
+[+] CSS - a global CSS file, with SASS CSS modules for page/component specific CSS - Flexbox
 
 I tried to plan ahead and be as organized as possible when approaching this design. With this in mind I went
 with a CSS variables and a global CSS file for reusable CSS, where possible.

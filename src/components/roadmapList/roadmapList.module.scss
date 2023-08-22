@@ -25,3 +25,20 @@
 .columnHeader p {
   text-align: left;
 }
+
+@media (max-width: 956px) {
+  .container {
+    flex-basis: 32.2%;
+    gap: 1.5%;
+  }
+
+  .columnContainer:not(:last-child) {
+    padding-right: 0;
+  }
+
+  .columnHeader {
+    p {
+      font-size: 14px;
+    }
+  }
+}

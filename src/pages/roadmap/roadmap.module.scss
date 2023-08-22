@@ -10,3 +10,9 @@
 .body {
   width: 75%;
 }
+
+@media (max-width: 956px) {
+  .body {
+    width: 90%;
+  }
+}

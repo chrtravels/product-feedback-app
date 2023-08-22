@@ -29,3 +29,23 @@ img {
     text-align: left;
   }
 }
+
+@media (max-width: 956px) {
+  .container {
+    flex-direction: row;
+    height: 80%;
+    gap: 1%;
+  }
+
+  img {
+    height: 100%;
+  }
+
+  .content {
+    height: 100%;
+  }
+
+  .containerItem {
+    flex-basis: 33%;
+  }
+}

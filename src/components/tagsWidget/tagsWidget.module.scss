@@ -17,3 +17,14 @@
   padding:  .3rem 1rem;
   cursor: pointer;
 }
+
+@media (max-width: 956px) {
+  .container {
+    margin: 0;
+    flex-basis: 33%;
+  }
+
+  .tagContainer {
+    height: 1.7rem;
+  }
+}

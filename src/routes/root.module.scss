@@ -20,3 +20,21 @@
   height: 100vh;
   flex-basis: 83%;
 }
+
+@media (max-width: 956px) {
+  .container {
+    margin-top: 2rem;
+  }
+
+  .body {
+    flex-direction: column;
+    gap: 0;
+    width: 90%;
+  }
+}
+
+@media (max-width: 1210px) {
+  .body {
+    width: 90%;
+  }
+}

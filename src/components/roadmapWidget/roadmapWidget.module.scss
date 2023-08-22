@@ -35,7 +35,6 @@
   }
 }
 
-
 .leftContent {
   display: flex;
 
@@ -43,4 +42,13 @@
     align-self: center;
     margin: 0 0 .5rem 0;
   }
+}
+
+@media (max-width: 956px) {
+  .container {
+    margin: 0;
+    padding: 1rem .5rem;
+    flex-basis: 33%;
+  }
+
 }
