@@ -119,3 +119,13 @@
   justify-content: flex-end;
   margin-top: 1.5rem;
 }
+
+.warningText {
+  margin-top: 0;
+  color: red;
+  display: none;
+}
+
+.warningTextShow {
+  display: contents;
+}

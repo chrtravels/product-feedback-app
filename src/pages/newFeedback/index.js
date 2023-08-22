@@ -15,6 +15,8 @@ function NewFeedback() {
   const categoryOptions = ['Feature','UI', 'UX', 'Enhancement', 'Bug'];
   const [selectedOption, setSelectedOption] = useState(categoryOptions[0]);
 
+  const [isEmpty, setIsEmpty] = useState(true);
+
   const [state, setState] = useState({
     title: '',
     upvotes: 0,
@@ -26,9 +28,14 @@ function NewFeedback() {
 
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    addRequest(state);
-    navigate('/');
+    if (state.description.length === 0) {
+      event.preventDefault();
+      setIsEmpty(false);
+    } else {
+      event.preventDefault();
+      addRequest(state);
+      navigate('/');
+    }
   }
 
   return (
@@ -109,12 +116,15 @@ function NewFeedback() {
                   <textarea
                     id='description'
                     name='description'
+                    className={isEmpty ? '' : 'field-error'}
                     rows='4'
                     value={state.description}
+                    onClick={(e) => {setIsEmpty(true)}}
                     onChange={(e) => setState((state) => ({
                       ...state, [e.target.id]: e.target.value
                     }))}
                   />
+                  <p className={`${styles.warningText} ${isEmpty ? '' : styles.warningTextShow} body-3`}>Can't be empty</p>
                 </div>
 
                 <div className={styles.buttonContainer}>

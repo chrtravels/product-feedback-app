@@ -169,7 +169,11 @@ h4 {
 
 // Error
 .field-error {
-  border: $warning 2px solid;
+  // border: $warning 2px solid;
+  border-style: solid !important;
+  border-color: $warning !important;
+  border-width: 1px !important;
+  margin: -2px;
 }
 
 // DROP DOWN
