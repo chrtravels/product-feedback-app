@@ -6,7 +6,6 @@ const bodyParser = require('koa-bodyparser');
 const { HOST } = require('./config')
 const { PORT } = require('./config');
 
-
 app.use(bodyParser());
 
 // app.use(cors({origin: '*'}));
