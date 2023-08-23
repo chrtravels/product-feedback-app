@@ -83,14 +83,14 @@ As always it feels good when you get something to work and have those Aha moment
 
 ## Deployment
 
-Deployed to Github pages:  http://chrtravels.github.io/product-feedback-app
+Deployed to Netlify:
 
 
 ## Continued Development
 
 Still to be completed:
 [+] Form validation
-[+] Tablet and mobile CSS
+[+] Mobile CSS
 
 ## Author
 
