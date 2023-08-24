@@ -83,7 +83,9 @@ As always it feels good when you get something to work and have those Aha moment
 
 ## Deployment
 
-Deployed to Netlify:
+Deployed to Vercel: https://product-feedback-app-ochre.vercel.app/
+
+Node backend and React Frontend are deployed as two separate projects on Vercel.
 
 
 ## Continued Development
