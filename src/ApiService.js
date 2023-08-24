@@ -1,4 +1,4 @@
-const URL = 'https://product-feedback-app-olive-sigma.vercel.app/';
+const URL = 'https://product-feedback-app-olive-sigma.vercel.app';
 // const URL = 'http://localhost:3030';
 
 export const getRequests = async () => {
