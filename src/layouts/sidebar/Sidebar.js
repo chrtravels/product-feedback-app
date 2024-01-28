@@ -8,8 +8,8 @@ function Sidebar({ requests, setRequests, setFilteredByTag }) {
     <div className={styles.container}>
       <div className={`${styles.header} ${styles.containerItem}`}>
       <div className={styles.content}>
-        <h1 className='white-font'>Frontend Mentor</h1>
-        <p className='body-1 white-font'>Feedback Board</p>
+        <h1 className='white-font'>Product Feedback</h1>
+        <p className='body-1 white-font'>Product Development Pipeline</p>
       </div>
       <img src={require("../../assets/suggestions/desktop/background-header.png")} alt="header background" />
       </div>
