@@ -1,5 +1,5 @@
-const URL = 'https://product-feedback-app-olive-sigma.vercel.app';
-// const URL = 'http://localhost:3030';
+// const URL = 'https://product-feedback-app-olive-sigma.vercel.app';
+const URL = 'http://localhost:3030';
 
 export const getRequests = async () => {
   try {
@@ -31,7 +31,6 @@ export const addRequest = async (request) => {
 }
 
 export const deleteFeedback = async (feedback) => {
-  console.log(feedback)
   const options = {
     method: 'DELETE',
     headers: {

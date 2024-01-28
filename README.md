@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - [Screenshot](#screenshot)
   - [Detailed Requirements](#detailed-requirements)
   - [Expected Behaviour](#expected-behaviour)
-  - [My Process](#my-process)
+  - [My Process \& Tech Stack](#my-process--tech-stack)
   - [What I Learned](#what-i-learned)
   - [Deployment](#deployment)
   - [Continued Development](#continued-development)
@@ -55,7 +55,7 @@ Users should be able to:
   - Use the data from the `currentUser` object in the `data.json` file to populate the user data for any new comments or replies.
   - Any comment/reply can have a maximum of 250 characters.
 
-## My Process
+## My Process & Tech Stack
 
 I decided to make this as a fullstack app. I converted the included data.json to PostgreSQL tables.
 No login was used for this project so I just went with a single, hard coded user for adding new feedback
