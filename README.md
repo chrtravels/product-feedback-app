@@ -13,7 +13,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - [What I Learned](#what-i-learned)
   - [Deployment](#deployment)
   - [Continued Development](#continued-development)
-  - [Author](#author)
+
 
 ## Task
 
@@ -93,7 +93,3 @@ Node backend and React Frontend are deployed as two separate projects on Vercel.
 Still to be completed:
 [+] Form validation
 [+] Mobile CSS
-
-## Author
-
-- Frontend Mentor - [@chrtravels](https://www.frontendmentor.io/profile/chrtravels)
